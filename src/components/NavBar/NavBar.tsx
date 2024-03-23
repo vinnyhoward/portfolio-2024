@@ -6,16 +6,19 @@ import {
   DarkIcon,
   LightIcon,
 } from "../Icons";
+import { useTheme } from "../../contexts/ThemeContext";
 
 const Nav = styled.nav`
-  background-color: ${({ theme }) => theme.colors.white};
-  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.color1};
+  border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.01);
-  width: 300px;
+  width: 560px;
+  height: 64px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 25px;
+  border: 1px solid ${({ theme }) => theme.border.color1};
 
   ul {
     display: flex;
@@ -23,6 +26,7 @@ const Nav = styled.nav`
     list-style-type: none;
     padding: 0;
   }
+
   li {
     cursor: pointer;
     margin: 0 5px;
@@ -35,7 +39,7 @@ const Nav = styled.nav`
   }
 
   li:hover {
-    background-color: ${({ theme }) => theme.colors.white};
+    background-color: ${({ theme }) => theme.colors.color2};
     transition: background-color 0.5s;
   }
 
@@ -48,29 +52,44 @@ const Nav = styled.nav`
 
     div {
       margin: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div:hover {
+      background-color: ${({ theme }) => theme.color2};
+      transition: background-color 0.5s;
+      border-radius: 50%;
     }
   }
 `;
 
 export const NavBar = () => {
+  const { theme, toggleTheme } = useTheme();
+  const isLightTheme = theme.name === "light";
   return (
     <Nav>
       <ul>
         <li>
-          <HomeIcon />
+          <HomeIcon fill={theme.fontFamily.fontColor1} />
         </li>
         <li>
-          <ProfileIcon />
+          <ProfileIcon fill={theme.fontFamily.fontColor1} />
         </li>
         <li>
-          <ProjectsIcon />
+          <ProjectsIcon fill={theme.fontFamily.fontColor1} />
         </li>
       </ul>
 
       <div className="interaction-container">
-        <div>
-          <DarkIcon />
-        </div>
+        <li onClick={() => toggleTheme()}>
+          {isLightTheme ? (
+            <DarkIcon fill={theme.fontFamily.fontColor1} />
+          ) : (
+            <LightIcon fill={theme.fontFamily.fontColor1} />
+          )}
+        </li>
         <div>Profile</div>
       </div>
     </Nav>

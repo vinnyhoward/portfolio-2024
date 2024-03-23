@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { NavBar } from "../components/NavBar/NavBar";
 
 const Main = styled.main`
-  background-color: ${({ theme }) => theme.colors.whiteSmoke};
+  background-color: ${({ theme }) => theme.colors.color2};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

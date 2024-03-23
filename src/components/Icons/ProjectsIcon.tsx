@@ -7,14 +7,14 @@ interface ProjectsIconProps {
 }
 
 export const ProjectsIcon: FC<ProjectsIconProps> = ({
-  width = 24,
-  height = 24,
+  width = 29,
+  height = 29,
   fill = "#25314C",
 }) => (
   <svg
     width={width}
     height={height}
-    viewBox="0 0 24 24"
+    viewBox="0 0 24 22"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
