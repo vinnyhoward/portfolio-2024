@@ -28,6 +28,7 @@ export const lightTheme = {
     outfit: outfit.style.fontFamily,
     fontColor1: "#25314C",
     fontColor2: "#ffffff",
+    fontColor3: "#c0c0c0",
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -44,6 +45,14 @@ export const lightTheme = {
   border: {
     color1: "#e6e6e6",
     stroke1: "1px",
+  },
+  layout: {
+    width: "560px",
+    padding: "1rem",
+    margin: "0 auto",
+  },
+  boxShadow: {
+    shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
   },
 };
 
@@ -63,6 +72,7 @@ export const darkTheme = {
     outfit: outfit.style.fontFamily,
     fontColor1: "#ffffff",
     fontColor2: "#25314C",
+    fontColor3: "#c0c0c0",
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -79,6 +89,14 @@ export const darkTheme = {
   border: {
     color1: "#2b2b2b",
     stroke1: "1px",
+  },
+  layout: {
+    width: "560px",
+    padding: "1rem",
+    margin: "0 auto",
+  },
+  boxShadow: {
+    shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
   },
 };
 
@@ -99,6 +117,7 @@ declare module "styled-components" {
       outfit: string;
       fontColor1: string;
       fontColor2: string;
+      fontColor3: string;
     };
     fontSize: {
       xs: string;
@@ -111,6 +130,18 @@ declare module "styled-components" {
       jumbo: string;
       jumboXL: string;
       jumboXXL: string;
+    };
+    border: {
+      color1: string;
+      stroke1: string;
+    };
+    layout: {
+      width: string;
+      padding: string;
+      margin: string;
+    };
+    boxShadow: {
+      shadow1: string;
     };
   }
 }

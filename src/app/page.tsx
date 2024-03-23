@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { NavBar } from "../components/NavBar/NavBar";
+import { MainBody } from "../components/MainBody/MainBody";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.color2};
@@ -17,6 +18,7 @@ export default function Home() {
   return (
     <Main>
       <NavBar />
+      <MainBody />
     </Main>
   );
 }
