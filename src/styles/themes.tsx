@@ -53,7 +53,7 @@ export const darkTheme = {
   colors: {
     color1: "#212121",
     color2: "#161616",
-    color3: "#1f211f",
+    color3: "#3A3A3A",
     color4: "7885FF",
     color5: "#00CCC0",
     color6: "#E7F53C",
@@ -111,10 +111,6 @@ declare module "styled-components" {
       jumbo: string;
       jumboXL: string;
       jumboXXL: string;
-    };
-    border: {
-      color1: string;
-      stroke1: string;
     };
   }
 }

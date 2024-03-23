@@ -5,8 +5,10 @@ import {
   ProjectsIcon,
   DarkIcon,
   LightIcon,
+  StarIcon,
 } from "../Icons";
 import { useTheme } from "../../contexts/ThemeContext";
+import { BrandButton } from "../BrandButton/BrandButton";
 
 const Nav = styled.nav`
   background-color: ${({ theme }) => theme.colors.color1};
@@ -63,34 +65,67 @@ const Nav = styled.nav`
       border-radius: 50%;
     }
   }
+
+  .btn__container {
+    width: 120px;
+    height: 40px;
+  }
+
+  .icon__container {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn__text {
+    font-size: ${({ theme }) => theme.fontSize.md};
+    font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
+    color: ${({ theme }) =>
+      theme.name === "light"
+        ? theme.fontFamily.fontColor2
+        : theme.fontFamily.fontColor1};
+  }
 `;
 
 export const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
   const isLightTheme = theme.name === "light";
+  const iconColor = theme.fontFamily.fontColor1;
+  const buttonIconColor = isLightTheme
+    ? theme.fontFamily.fontColor2
+    : theme.fontFamily.fontColor1;
   return (
     <Nav>
       <ul>
         <li>
-          <HomeIcon fill={theme.fontFamily.fontColor1} />
+          <HomeIcon fill={iconColor} />
         </li>
         <li>
-          <ProfileIcon fill={theme.fontFamily.fontColor1} />
+          <ProfileIcon fill={iconColor} />
         </li>
         <li>
-          <ProjectsIcon fill={theme.fontFamily.fontColor1} />
+          <ProjectsIcon fill={iconColor} />
         </li>
       </ul>
 
       <div className="interaction-container">
         <li onClick={() => toggleTheme()}>
           {isLightTheme ? (
-            <DarkIcon fill={theme.fontFamily.fontColor1} />
+            <DarkIcon fill={iconColor} />
           ) : (
-            <LightIcon fill={theme.fontFamily.fontColor1} />
+            <LightIcon fill={iconColor} />
           )}
         </li>
-        <div>Profile</div>
+        <div className="btn__container">
+          <BrandButton onClick={() => console.log("clicked")}>
+            <div className="icon__container">
+              <StarIcon fill={buttonIconColor} />
+            </div>
+            <div className="btn__text">Hire me</div>
+          </BrandButton>
+        </div>
       </div>
     </Nav>
   );
