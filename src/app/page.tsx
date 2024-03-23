@@ -1,12 +1,22 @@
 "use client";
 
-import styles from "./page.module.css";
 import styled from "styled-components";
+import { NavBar } from "../components/NavBar/NavBar";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.whiteSmoke};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
 `;
 
 export default function Home() {
-  return <Main className={styles.main}></Main>;
+  return (
+    <Main>
+      <NavBar />
+    </Main>
+  );
 }

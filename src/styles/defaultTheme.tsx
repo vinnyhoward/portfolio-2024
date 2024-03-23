@@ -17,7 +17,7 @@ export const defaultTheme = {
   borderRadius: "4px",
   colors: {
     white: "#ffffff",
-    whiteSmoke: "#F4F4F4",
+    whiteSmoke: "#ECEFF3",
     eerieBlack: "#1f211f",
     tropicalIndigo: "7885FF",
     robinEggBlue: "#00CCC0",
@@ -40,3 +40,34 @@ export const defaultTheme = {
     jumboXXL: "8rem", // 128px
   },
 };
+
+declare module "styled-components" {
+  export interface DefaultTheme {
+    name: string;
+    borderRadius: string;
+    colors: {
+      white: string;
+      whiteSmoke: string;
+      eerieBlack: string;
+      tropicalIndigo: string;
+      robinEggBlue: string;
+      lemonLime: string;
+    };
+    fontFamily: {
+      robotoFlex: string;
+      outfit: string;
+    };
+    fontSize: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+      xxxl: string;
+      jumbo: string;
+      jumboXL: string;
+      jumboXXL: string;
+    };
+  }
+}
