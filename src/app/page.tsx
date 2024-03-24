@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { NavBar } from "../components/NavBar/NavBar";
 import { MainBody } from "../components/MainBody/MainBody";
+import { Notification } from "../components/Notification/Notification";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.color2};
@@ -18,7 +19,10 @@ export default function Home() {
   return (
     <Main>
       <NavBar />
-      <MainBody />
+      <MainBody
+        sectionHeader="Software Engineer"
+        rightActionContainer={<Notification message="Available for work" />}
+      />
     </Main>
   );
 }
