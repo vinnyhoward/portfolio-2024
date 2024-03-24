@@ -11,7 +11,6 @@ const MainBodyContainer = styled.div`
   border: 1px solid ${({ theme }) => theme.border.color1};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 32px 8px 8px;
   min-height: 100vh;
@@ -51,16 +50,23 @@ const MainBodyContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  .children__container {
+    width: 100%;
+    padding: 0px 25px;
+  }
 `;
 
 interface MainBodyProps {
   sectionHeader?: string;
   rightActionContainer?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const MainBody: React.FC<MainBodyProps> = ({
   sectionHeader = "Software Developer",
   rightActionContainer = null,
+  children,
 }) => {
   const { theme } = useTheme();
   const iconColor = theme.fontFamily.fontColor3;
@@ -75,7 +81,7 @@ export const MainBody: React.FC<MainBodyProps> = ({
         </h1>
         <div className="right-action__container">{rightActionContainer}</div>
       </div>
-      <p></p>
+      <div className="children__container">{children}</div>
     </MainBodyContainer>
   );
 };
