@@ -19,6 +19,7 @@ export const NavBar = () => {
   const buttonIconColor = isLightTheme
     ? theme.fontFamily.fontColor2
     : theme.fontFamily.fontColor1;
+
   return (
     <Nav>
       <ul>
