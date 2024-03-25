@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import {
   HomeIcon,
   ProfileIcon,
@@ -22,13 +23,19 @@ export const NavBar = () => {
     <Nav>
       <ul>
         <li>
-          <HomeIcon fill={iconColor} />
+          <Link href="/">
+            <HomeIcon fill={iconColor} />
+          </Link>
         </li>
         <li>
-          <ProfileIcon fill={iconColor} />
+          <Link href="/projects">
+            <ProjectsIcon fill={iconColor} />
+          </Link>
         </li>
         <li>
-          <ProjectsIcon fill={iconColor} />
+          <Link href="/about">
+            <ProfileIcon fill={iconColor} />
+          </Link>
         </li>
       </ul>
 
