@@ -100,8 +100,10 @@ export const darkTheme = {
   },
 };
 
+type Theme = typeof theme;
+
 declare module "styled-components" {
-  export interface DefaultTheme {
+  export interface DefaultTheme extends Theme {
     name: string;
     borderRadius: string;
     colors: {

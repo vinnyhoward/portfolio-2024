@@ -18,7 +18,6 @@ const Main = styled.main`
 export default function Home() {
   return (
     <Main>
-      <NavBar />
       <MainBody
         sectionHeader="Software Engineer"
         rightActionContainer={<Notification message="Available for work" />}
