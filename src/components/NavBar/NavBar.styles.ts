@@ -13,6 +13,7 @@ export const Nav = styled.nav`
   border: 1px solid ${({ theme }) => theme.border.color1};
   position: fixed;
   top: 15px;
+  z-index: 1000;
 
   ul {
     display: flex;
@@ -43,39 +44,14 @@ export const Nav = styled.nav`
     align-items: center;
     color: black;
 
-    div {
-      margin: 0 5px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
     div:hover {
       background-color: ${({ theme }) => theme.color2};
       transition: background-color 0.5s;
       border-radius: 50%;
     }
-  }
 
-  .btn__container {
-    width: 120px;
-    height: 40px;
-  }
-
-  .icon__container {
-    width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .btn__text {
-    font-size: ${({ theme }) => theme.fontSize.md};
-    font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
-    color: ${({ theme }) =>
-      theme.name === "light"
-        ? theme.fontFamily.fontColor2
-        : theme.fontFamily.fontColor1};
+    .btn__container {
+      margin-left: 10px;
+    }
   }
 `;

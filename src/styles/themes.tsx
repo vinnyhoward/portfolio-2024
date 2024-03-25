@@ -29,6 +29,7 @@ export const lightTheme = {
     fontColor1: "#25314C",
     fontColor2: "#ffffff",
     fontColor3: "#c0c0c0",
+    fontColor4: "#666666",
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -73,6 +74,7 @@ export const darkTheme = {
     fontColor1: "#ffffff",
     fontColor2: "#25314C",
     fontColor3: "#c0c0c0",
+    fontColor4: "#666666",
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -120,6 +122,7 @@ declare module "styled-components" {
       fontColor1: string;
       fontColor2: string;
       fontColor3: string;
+      fontColor4: string;
     };
     fontSize: {
       xs: string;

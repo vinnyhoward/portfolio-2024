@@ -1,7 +1,6 @@
 import React from "react";
 import { MainBodyContainer } from "./MainBody.styles";
 import { useTheme } from "../../contexts/ThemeContext";
-import { Hero } from "../Hero/Hero";
 import { ArrowIcon } from "../Icons";
 
 interface MainBodyProps {

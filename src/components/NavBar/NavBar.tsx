@@ -9,7 +9,7 @@ import {
   StarIcon,
 } from "../Icons";
 import { useTheme } from "../../contexts/ThemeContext";
-import { BrandButton } from "../BrandButton/BrandButton";
+import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 import { Nav } from "./NavBar.styles";
 
 export const NavBar = () => {
@@ -49,12 +49,11 @@ export const NavBar = () => {
           )}
         </li>
         <div className="btn__container">
-          <BrandButton onClick={() => console.log("clicked")}>
-            <div className="icon__container">
-              <StarIcon fill={buttonIconColor} />
-            </div>
-            <div className="btn__text">Hire me</div>
-          </BrandButton>
+          <PrimaryButton
+            buttonIcon={<StarIcon fill={buttonIconColor} />}
+            buttonText="Hire Me!"
+            onClick={() => console.log("clicked")}
+          />
         </div>
       </div>
     </Nav>

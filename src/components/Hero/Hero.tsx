@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 import { HeroContainer } from "./Hero.styles";
 
 interface HeroProps {
@@ -17,10 +17,21 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <HeroContainer>
       <div className="hero__content">
-        <h1>{title}</h1>
-        <p>{caption}</p>
-        {extraNode}
+        <div className="hero__text">
+          <div className="title">{title}</div>
+          <p>{caption}</p>
+        </div>
+        <div className="image__container">
+          <Image
+            className="hero__image"
+            src={imageUrl}
+            alt={title}
+            width={160}
+            height={160}
+          />
+        </div>
       </div>
+      <div className="extra-node__container">{extraNode}</div>
     </HeroContainer>
   );
 };

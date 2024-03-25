@@ -105,4 +105,13 @@ export const GlobalStyles = createGlobalStyle`
       color-scheme: dark;
     }
   }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
 `;
