@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const MainBodyContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.color1};
-  border-radius: ${({ theme }) => theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   width: ${({ theme }) => theme.layout.width};
-  border: 1px solid ${({ theme }) => theme.border.color1};
+  border: 1px solid ${({ theme }) => theme.border.colors.color1};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ export const MainBodyContainer = styled.div`
       font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
       font-weight: 500;
       font-size: ${({ theme }) => theme.fontSize.xl};
-      color: ${({ theme }) => theme.fontFamily.fontColor3};
+      color: ${({ theme }) => theme.fontColor.fontColor3};
     }
   }
 

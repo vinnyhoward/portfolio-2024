@@ -4,7 +4,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 
 const NotificationContainer = styled.div`
   background-color: rgba(40, 199, 128, 0.15);
-  border-radius: ${({ theme }) => theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   width: 100%;
   display: flex;

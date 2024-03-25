@@ -10,18 +10,18 @@ import {
 } from "../Icons";
 import { useTheme } from "../../contexts/ThemeContext";
 import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
-import { Nav } from "./NavBar.styles";
+import { NavContainer } from "./NavBar.styles";
 
 export const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
   const isLightTheme = theme.name === "light";
-  const iconColor = theme.fontFamily.fontColor1;
+  const iconColor = theme.fontColor.fontColor1;
   const buttonIconColor = isLightTheme
-    ? theme.fontFamily.fontColor2
-    : theme.fontFamily.fontColor1;
+    ? theme.fontColor.fontColor2
+    : theme.fontColor.fontColor1;
 
   return (
-    <Nav>
+    <NavContainer>
       <ul>
         <li>
           <Link href="/">
@@ -56,6 +56,6 @@ export const NavBar = () => {
           />
         </div>
       </div>
-    </Nav>
+    </NavContainer>
   );
 };

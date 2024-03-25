@@ -1,6 +1,6 @@
 "use client";
 
-import gsap from "gsap";
+import { useState } from "react";
 import styled from "styled-components";
 import { MainBody } from "@/components/MainBody/MainBody";
 import { Notification } from "@/components/Notification/Notification";
@@ -32,16 +32,18 @@ const ButtonContainer = styled.div`
 `;
 
 export default function Home() {
+  const [isCopied, setIsCopied] = useState(false);
   const { theme } = useTheme();
   const isLightTheme = theme.name === "light";
   const primaryIconColor = isLightTheme
-    ? theme.fontFamily.fontColor2
-    : theme.fontFamily.fontColor1;
+    ? theme.fontColor.fontColor2
+    : theme.fontColor.fontColor1;
   const secondaryIconColor = isLightTheme
-    ? theme.fontFamily.fontColor1
-    : theme.fontFamily.fontColor2;
+    ? theme.fontColor.fontColor1
+    : theme.fontColor.fontColor2;
 
   const handleCopy = () => {
+    setIsCopied(true);
     navigator.clipboard
       .writeText(process.env.NEXT_PUBLIC_EMAIL || "missing email :(")
       .then(() => {
@@ -50,6 +52,10 @@ export default function Home() {
       .catch((err) => {
         console.error("Failed to copy: ", err);
       });
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
   };
 
   const renderButtons = () => {
@@ -65,7 +71,7 @@ export default function Home() {
         <div className="btn">
           <SecondaryButton
             buttonIcon={<CopyIcon fill={secondaryIconColor} />}
-            buttonText="Copy Email"
+            buttonText={isCopied ? "Copied!" : "Copy Email"}
             onClick={() => handleCopy()}
           />
         </div>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Button = styled.button`
   border-radius: 6px;
   background-color: ${({ theme }) => theme.colors.color1};
-  border: 1px solid ${({ theme }) => theme.fontFamily.fontColor1};
+  border: 1px solid ${({ theme }) => theme.fontColor.fontColor1};
   height: 40px;
   cursor: pointer;
   padding: 0.5rem 0.75rem;
@@ -33,8 +33,8 @@ const Button = styled.button`
     font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
     color: ${({ theme }) =>
       theme.name === "light"
-        ? theme.fontFamily.fontColor1
-        : theme.fontFamily.fontColor1};
+        ? theme.fontColor.fontColor1
+        : theme.fontColor.fontColor1};
   }
 `;
 

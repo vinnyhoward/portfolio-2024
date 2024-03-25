@@ -17,7 +17,7 @@ export const MainBody: React.FC<MainBodyProps> = ({
   children,
 }) => {
   const { theme } = useTheme();
-  const iconColor = theme.fontFamily.fontColor3;
+  const iconColor = theme.fontColor.fontColor3;
   return (
     <MainBodyContainer>
       <div className="title__container">

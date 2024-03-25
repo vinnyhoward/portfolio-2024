@@ -3,7 +3,7 @@
 import styled from "styled-components";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import StyledComponentsRegistry from "./registry";
-import { GlobalStyles } from "@/styles/GlobalStyles";
+import { GlobalStyles } from "@/styles/globalStyles";
 
 const ParentLayout = styled.div`
   background-color: ${({ theme }) => theme.colors.color2};

@@ -1,5 +1,12 @@
 import { Outfit, Roboto_Flex } from "next/font/google";
 
+const sizes = {
+  sm: "480px",
+  md: "768px",
+  lg: "1024px",
+  xl: "1200px",
+};
+
 const robotoFlex = Roboto_Flex({
   weight: ["500", "600", "700", "800"],
   subsets: ["latin"],
@@ -14,7 +21,10 @@ const outfit = Outfit({
 
 export const lightTheme = {
   name: "light",
-  borderRadius: "12px",
+  borderRadius: {
+    borderRadius1: "6px",
+    borderRadius2: "12px",
+  },
   colors: {
     color1: "#ffffff",
     color2: "#ECEFF3",
@@ -23,13 +33,15 @@ export const lightTheme = {
     color5: "#00CCC0",
     color6: "#E7F53C",
   },
-  fontFamily: {
-    robotoFlex: robotoFlex.style.fontFamily,
-    outfit: outfit.style.fontFamily,
+  fontColor: {
     fontColor1: "#25314C",
     fontColor2: "#ffffff",
     fontColor3: "#c0c0c0",
     fontColor4: "#666666",
+  },
+  fontFamily: {
+    robotoFlex: robotoFlex.style.fontFamily,
+    outfit: outfit.style.fontFamily,
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -44,16 +56,25 @@ export const lightTheme = {
     jumboXXL: "8rem", // 128px
   },
   border: {
-    color1: "#e6e6e6",
-    stroke1: "1px",
+    colors: {
+      color1: "#e6e6e6",
+    },
+    strokes: {
+      stroke1: "1px",
+    },
   },
   layout: {
-    width: "560px",
-    padding: "1rem",
-    margin: "0 auto",
+    width: "700px",
   },
   boxShadow: {
     shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
+  },
+  breakpoints: sizes,
+  mediaQueries: {
+    small: `(min-width: ${sizes.sm})`,
+    medium: `(min-width: ${sizes.md})`,
+    large: `(min-width: ${sizes.lg})`,
+    extraLarge: `(min-width: ${sizes.xl})`,
   },
 };
 
@@ -68,13 +89,15 @@ export const darkTheme = {
     color5: "#00CCC0",
     color6: "#E7F53C",
   },
-  fontFamily: {
-    robotoFlex: robotoFlex.style.fontFamily,
-    outfit: outfit.style.fontFamily,
+  fontColor: {
     fontColor1: "#ffffff",
     fontColor2: "#25314C",
     fontColor3: "#c0c0c0",
     fontColor4: "#666666",
+  },
+  fontFamily: {
+    robotoFlex: robotoFlex.style.fontFamily,
+    outfit: outfit.style.fontFamily,
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -89,23 +112,30 @@ export const darkTheme = {
     jumboXXL: "8rem", // 128px
   },
   border: {
-    color1: "#2b2b2b",
-    stroke1: "1px",
+    colors: {
+      color1: "#2b2b2b",
+    },
+    strokes: {
+      stroke1: "1px",
+    },
   },
   layout: {
-    width: "560px",
-    padding: "1rem",
-    margin: "0 auto",
+    width: "700px",
   },
   boxShadow: {
     shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
   },
+  breakpoints: sizes,
+  mediaQueries: {
+    small: `(min-width: ${sizes.sm})`,
+    medium: `(min-width: ${sizes.md})`,
+    large: `(min-width: ${sizes.lg})`,
+    extraLarge: `(min-width: ${sizes.xl})`,
+  },
 };
 
-type Theme = typeof theme;
-
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme {
+  export interface Theme {
     name: string;
     borderRadius: string;
     colors: {
@@ -116,13 +146,15 @@ declare module "styled-components" {
       color5: string;
       color6: string;
     };
-    fontFamily: {
-      robotoFlex: string;
-      outfit: string;
+    fontColor: {
       fontColor1: string;
       fontColor2: string;
       fontColor3: string;
       fontColor4: string;
+    };
+    fontFamily: {
+      robotoFlex: string;
+      outfit: string;
     };
     fontSize: {
       xs: string;
@@ -137,16 +169,30 @@ declare module "styled-components" {
       jumboXXL: string;
     };
     border: {
-      color1: string;
-      stroke1: string;
+      colors: {
+        color1: string;
+      };
+      strokes: {
+        stroke1: string;
+      };
     };
     layout: {
       width: string;
-      padding: string;
-      margin: string;
     };
     boxShadow: {
       shadow1: string;
+    };
+    breakpoints: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    mediaQueries: {
+      small: string;
+      medium: string;
+      large: string;
+      extraLarge: string;
     };
   }
 }

@@ -16,7 +16,7 @@ export const HeroContainer = styled.div`
 
   .title {
     font-size: 3rem;
-    color: ${({ theme }) => theme.fontFamily.fontColor1};
+    color: ${({ theme }) => theme.fontColor.fontColor1};
     font-size: ${({ theme }) => theme.fontSize.xxxl};
     font-weight: 700;
     margin: 0;
@@ -24,7 +24,7 @@ export const HeroContainer = styled.div`
 
   p {
     font-size: 1.5rem;
-    color: ${({ theme }) => theme.fontFamily.fontColor4};
+    color: ${({ theme }) => theme.fontColor.fontColor4};
     font-size: ${({ theme }) => theme.fontSize.xl};
     line-height: 1.5;
   }
@@ -63,7 +63,6 @@ export const HeroContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     padding: 0 25px;
-    margin-top: 20px;
     color: black;
     width: 100%;
   }

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const NavContainer = styled.nav`
   background-color: ${({ theme }) => theme.colors.color1};
-  border-radius: ${({ theme }) => theme.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   width: ${({ theme }) => theme.layout.width};
   height: 64px;
@@ -30,6 +30,7 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 15px;
   }
 
   li:hover {
@@ -45,7 +46,7 @@ export const Nav = styled.nav`
     color: black;
 
     div:hover {
-      background-color: ${({ theme }) => theme.color2};
+      background-color: ${({ theme }) => theme.colors.color2};
       transition: background-color 0.5s;
       border-radius: 50%;
     }
