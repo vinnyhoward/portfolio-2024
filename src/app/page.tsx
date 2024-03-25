@@ -38,9 +38,7 @@ export default function Home() {
   const primaryIconColor = isLightTheme
     ? theme.fontColor.fontColor2
     : theme.fontColor.fontColor1;
-  const secondaryIconColor = isLightTheme
-    ? theme.fontColor.fontColor1
-    : theme.fontColor.fontColor2;
+  const secondaryIconColor = theme.fontColor.fontColor1;
 
   const handleCopy = () => {
     setIsCopied(true);

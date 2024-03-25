@@ -10,7 +10,7 @@ export const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
-  border: 1px solid ${({ theme }) => theme.border.color1};
+  border: 1px solid ${({ theme }) => theme.border.colors.color1};
   position: fixed;
   top: 15px;
   z-index: 1000;

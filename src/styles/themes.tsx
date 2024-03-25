@@ -64,7 +64,7 @@ export const lightTheme = {
     },
   },
   layout: {
-    width: "700px",
+    width: "650px",
   },
   boxShadow: {
     shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
@@ -80,7 +80,10 @@ export const lightTheme = {
 
 export const darkTheme = {
   name: "dark",
-  borderRadius: "12px",
+  borderRadius: {
+    borderRadius1: "6px",
+    borderRadius2: "12px",
+  },
   colors: {
     color1: "#212121",
     color2: "#161616",
@@ -120,7 +123,7 @@ export const darkTheme = {
     },
   },
   layout: {
-    width: "700px",
+    width: "650px",
   },
   boxShadow: {
     shadow1: "0px 2px 2px rgba(0, 0, 0, 0.01)",
@@ -137,7 +140,10 @@ export const darkTheme = {
 declare module "styled-components" {
   export interface Theme {
     name: string;
-    borderRadius: string;
+    borderRadius: {
+      borderRadius1: string;
+      borderRadius2: string;
+    };
     colors: {
       color1: string;
       color2: string;
