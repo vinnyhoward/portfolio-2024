@@ -1,31 +1,37 @@
 import React from "react";
 import styled from "styled-components";
+interface ButtonStyleProps {
+  outline?: boolean;
+  reverse?: boolean;
+}
 
-const Button = styled.button`
+const Button = styled.button<ButtonStyleProps>`
+  cursor: pointer;
   border-radius: 6px;
   background-color: transparent;
   border: 1px solid ${({ theme }) => theme.fontColor.fontColor1};
   height: 40px;
-  cursor: pointer;
   padding: 0.5rem 0.75rem;
   font-size: ${({ theme }) => theme.fontSize.md};
   font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
   transition: background-color 0.5s;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
   justify-content: center;
   align-items: center;
 
   .icon__container {
+    cursor: pointer;
     width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 8px;
+    margin: ${({ reverse }) => (reverse ? "0 0 0 8px" : "0 8px 0 0")};
   }
 
   .btn__text {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,15 +49,17 @@ interface ButtonProps {
   buttonText: string;
   buttonIcon?: React.ReactNode;
   outline?: boolean;
+  reverse?: boolean;
 }
 
 export const SecondaryButton: React.FC<ButtonProps> = ({
   onClick,
   buttonText,
   buttonIcon,
+  reverse = false,
 }) => {
   return (
-    <Button onClick={onClick}>
+    <Button {...{ reverse }} onClick={onClick}>
       {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
       <div className="btn__text">{buttonText}</div>
     </Button>

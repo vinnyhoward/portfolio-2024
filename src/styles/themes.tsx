@@ -32,6 +32,7 @@ export const lightTheme = {
     color4: "7885FF",
     color5: "#00CCC0",
     color6: "#E7F53C",
+    color7: "#f5f5f5",
   },
   fontColor: {
     fontColor1: "#25314C",
@@ -91,6 +92,7 @@ export const darkTheme = {
     color4: "7885FF",
     color5: "#00CCC0",
     color6: "#E7F53C",
+    color7: "#2c2c2c",
   },
   fontColor: {
     fontColor1: "#ffffff",
@@ -151,6 +153,7 @@ declare module "styled-components" {
       color4: string;
       color5: string;
       color6: string;
+      color7: string;
     };
     fontColor: {
       fontColor1: string;

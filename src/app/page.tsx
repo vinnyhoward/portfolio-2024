@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import styled from "styled-components";
+import { useTheme } from "@/contexts/ThemeContext";
 import { MainBody } from "@/components/MainBody/MainBody";
 import { Notification } from "@/components/Notification/Notification";
 import { Hero } from "@/components/Hero/Hero";
+import { Showcase } from "@/components/Showcase/Showcase";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
-import { StarIcon, CopyIcon } from "@/components/Icons";
-import { useTheme } from "@/contexts/ThemeContext";
+import { StarIcon, CopyIcon, ArrowIcon } from "@/components/Icons";
+import { ROUTES } from "@/constants/routes";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.color2};
@@ -34,6 +37,8 @@ const ButtonContainer = styled.div`
 export default function Home() {
   const [isCopied, setIsCopied] = useState(false);
   const { theme } = useTheme();
+  const router = useRouter();
+
   const isLightTheme = theme.name === "light";
   const primaryIconColor = isLightTheme
     ? theme.fontColor.fontColor2
@@ -76,6 +81,17 @@ export default function Home() {
       </ButtonContainer>
     );
   };
+
+  const renderShowcaseButton = () => {
+    return (
+      <SecondaryButton
+        reverse
+        buttonIcon={<ArrowIcon fill={secondaryIconColor} />}
+        buttonText="View All"
+        onClick={() => router.push(ROUTES.PROJECTS, { scroll: false })}
+      />
+    );
+  };
   const heroProps = {
     title: "I'm Vince Howard 👋",
     caption:
@@ -89,7 +105,12 @@ export default function Home() {
         sectionHeader="Software Engineer"
         rightActionContainer={<Notification message="Available for work" />}
         heroContainer={<Hero {...heroProps} />}
-      />
+      >
+        <Showcase
+          sectionHeader="Projects"
+          rightActionContainer={renderShowcaseButton()}
+        />
+      </MainBody>
     </Main>
   );
 }

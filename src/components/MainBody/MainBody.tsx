@@ -1,7 +1,6 @@
 import React from "react";
 import { MainBodyContainer } from "./MainBody.styles";
-import { useTheme } from "../../contexts/ThemeContext";
-import { ArrowIcon } from "../Icons";
+import { SectionHeader } from "../SectionHeader/SectionHeader";
 
 interface MainBodyProps {
   sectionHeader?: string;
@@ -16,18 +15,13 @@ export const MainBody: React.FC<MainBodyProps> = ({
   heroContainer = null,
   children,
 }) => {
-  const { theme } = useTheme();
-  const iconColor = theme.fontColor.fontColor3;
   return (
     <MainBodyContainer>
-      <div className="title__container">
-        <h1>
-          <div className="icon__container">
-            <ArrowIcon fill={iconColor} />
-          </div>
-          {sectionHeader}
-        </h1>
-        <div className="right-action__container">{rightActionContainer}</div>
+      <div className="section__container">
+        <SectionHeader
+          sectionHeader={sectionHeader}
+          rightActionContainer={rightActionContainer}
+        />
       </div>
       <div className="hero">{heroContainer}</div>
       <div className="children__container">{children}</div>

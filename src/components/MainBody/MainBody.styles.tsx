@@ -12,35 +12,6 @@ export const MainBodyContainer = styled.div`
   padding: 32px 8px 8px;
   min-height: 100vh;
 
-  .title__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 25px;
-    width: 100%;
-
-    h1 {
-      margin: 0;
-      font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
-      font-weight: 500;
-      font-size: ${({ theme }) => theme.fontSize.xl};
-      color: ${({ theme }) => theme.fontColor.fontColor3};
-    }
-  }
-
-  .right-action__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-  }
-
   h1 {
     display: flex;
     flex-direction: row;
@@ -58,5 +29,10 @@ export const MainBodyContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .section__container {
+    padding: 0px 25px;
+    width: 100%;
   }
 `;
