@@ -10,8 +10,7 @@ import { Hero } from "@/components/Hero/Hero";
 import { Showcase } from "@/components/Showcase/Showcase";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
-import { Social } from "@/components/Social/Social";
-import { Footer } from "@/components/Footer/Footer";
+import { Layout } from "@/components/Layout/Layout";
 import {
   StarIcon,
   CopyIcon,
@@ -39,7 +38,7 @@ const ButtonContainer = styled.div`
   align-items: center;
 
   .btn {
-    margin-right: 7.5px;
+    margin-right: 15px;
   }
 `;
 
@@ -115,19 +114,19 @@ export default function Home() {
         rightActionContainer={<Notification message="Available for work" />}
         heroContainer={<Hero {...heroProps} />}
       >
-        <Showcase
-          sectionHeader="Projects"
-          rightActionContainer={renderShowcaseButton()}
-          dataList={PROJECTS}
-        />
-        <Showcase
-          sectionHeader="Past Companies"
-          rightActionContainer={renderShowcaseButton()}
-          dataList={COMPANIES}
-          icon={<OpenLinkIcon fill={secondaryIconColor} />}
-        />
-        <Social />
-        <Footer />
+        <Layout>
+          <Showcase
+            sectionHeader="Projects"
+            rightActionContainer={renderShowcaseButton()}
+            dataList={PROJECTS}
+          />
+          <Showcase
+            sectionHeader="Past Companies"
+            rightActionContainer={renderShowcaseButton()}
+            dataList={COMPANIES}
+            icon={<OpenLinkIcon fill={secondaryIconColor} />}
+          />
+        </Layout>
       </MainBody>
     </Main>
   );
