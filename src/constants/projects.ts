@@ -23,7 +23,7 @@ export const PROJECTS: Project[] = [
   {
     title: "Reko",
     techStack: "React Native, Firebase, Expo",
-    projectLogo: "/images/reko-logo.png",
+    projectLogo: "/images/reko_logo.png",
     route: ROUTES.REKO,
   },
 ];

@@ -12,8 +12,14 @@ import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import { Social } from "@/components/Social/Social";
 import { Footer } from "@/components/Footer/Footer";
-import { StarIcon, CopyIcon, ArrowIcon } from "@/components/Icons";
+import {
+  StarIcon,
+  CopyIcon,
+  ArrowIcon,
+  OpenLinkIcon,
+} from "@/components/Icons";
 import { PROJECTS } from "@/constants/projects";
+import { COMPANIES } from "@/constants/companies";
 import { ROUTES } from "@/constants/routes";
 
 const Main = styled.main`
@@ -113,6 +119,12 @@ export default function Home() {
           sectionHeader="Projects"
           rightActionContainer={renderShowcaseButton()}
           dataList={PROJECTS}
+        />
+        <Showcase
+          sectionHeader="Past Companies"
+          rightActionContainer={renderShowcaseButton()}
+          dataList={COMPANIES}
+          icon={<OpenLinkIcon fill={secondaryIconColor} />}
         />
         <Social />
         <Footer />

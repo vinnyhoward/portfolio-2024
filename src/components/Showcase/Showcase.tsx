@@ -5,25 +5,27 @@ import { ShowcaseContainer } from "./Showcase.styles";
 import { useTheme } from "../../contexts/ThemeContext";
 import { SectionHeader } from "../SectionHeader/SectionHeader";
 import { Project } from "../../constants/projects";
+import { Company } from "../../constants/companies";
 import { CaretIcon } from "../Icons/CaretIcon";
 
 interface ShowcaseProps {
   sectionHeader?: string;
   rightActionContainer?: React.ReactNode;
-  dataList: Project[];
+  dataList: Project[] | Company[];
+  icon?: React.ReactNode;
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
   sectionHeader = "Section Header",
   rightActionContainer = null,
   dataList,
+  icon,
 }) => {
   const { theme } = useTheme();
 
-  const isLightTheme = theme.name === "light";
   const secondaryIconColor = theme.fontColor.fontColor1;
   const renderProjectList = () => {
-    return dataList.map((project: Project) => {
+    return dataList.map((project: Project | Company) => {
       return (
         <Link key={uuidv4()} href={project.route}>
           <div className="showcase__item">
@@ -38,11 +40,15 @@ export const Showcase: React.FC<ShowcaseProps> = ({
               </div>
               <div className="showcase__text">
                 <div className="showcase__title">{project.title}</div>
-                <div className="showcase__tech-stack">{project.techStack}</div>
+                {project.techStack ? (
+                  <div className="showcase__tech-stack">
+                    {project.techStack}
+                  </div>
+                ) : null}
               </div>
             </div>
             <div className="icon__container">
-              <CaretIcon fill={secondaryIconColor} />
+              {icon ? icon : <CaretIcon fill={secondaryIconColor} />}
             </div>
           </div>
         </Link>

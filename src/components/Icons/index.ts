@@ -11,3 +11,4 @@ export { LinkedinIcon } from "./LinkedinIcon";
 export { GithubIcon } from "./GithubIcon";
 export { TwitterIcon } from "./TwitterIcon";
 export { InstagramIcon } from "./InstagramIcon";
+export { OpenLinkIcon } from "./OpenLinkIcon";

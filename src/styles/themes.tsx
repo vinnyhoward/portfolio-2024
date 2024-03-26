@@ -41,8 +41,8 @@ export const lightTheme = {
     fontColor4: "#666666",
   },
   fontFamily: {
-    robotoFlex: robotoFlex.style.fontFamily,
     outfit: outfit.style.fontFamily,
+    robotoFlex: robotoFlex.style.fontFamily,
   },
   fontSize: {
     xs: "0.75rem", // 12px
@@ -101,8 +101,8 @@ export const darkTheme = {
     fontColor4: "#666666",
   },
   fontFamily: {
-    robotoFlex: robotoFlex.style.fontFamily,
     outfit: outfit.style.fontFamily,
+    robotoFlex: robotoFlex.style.fontFamily,
   },
   fontSize: {
     xs: "0.75rem", // 12px

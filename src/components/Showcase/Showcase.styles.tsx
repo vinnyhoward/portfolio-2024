@@ -10,6 +10,7 @@ export const ShowcaseContainer = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   padding: 24px;
   width: 100%;
+  margin-top: 24px;
 
   .showcase__list {
     width: 100%;
@@ -29,6 +30,7 @@ export const ShowcaseContainer = styled.div`
   }
 
   .showcase__title {
+    font-family: ${({ theme }) => theme.fontFamily.outfit};
     font-size: ${({ theme }) => theme.fontSize.xl};
     font-weight: 500;
     color: ${({ theme }) => theme.fontColor.fontColor1};
