@@ -23,6 +23,8 @@ export const ShowcaseContainer = styled.div`
     padding: 24px;
     background-color: ${({ theme }) => theme.colors.color1};
     border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
+    box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
+    border: 1px solid ${({ theme }) => theme.border.colors.color1};
     margin-bottom: 12px;
   }
 

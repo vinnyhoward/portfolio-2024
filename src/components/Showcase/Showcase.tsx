@@ -21,9 +21,6 @@ export const Showcase: React.FC<ShowcaseProps> = ({
   const { theme } = useTheme();
 
   const isLightTheme = theme.name === "light";
-  const primaryIconColor = isLightTheme
-    ? theme.fontColor.fontColor2
-    : theme.fontColor.fontColor1;
   const secondaryIconColor = theme.fontColor.fontColor1;
   const renderProjectList = () => {
     return dataList.map((project: Project) => {

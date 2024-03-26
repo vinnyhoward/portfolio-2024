@@ -10,6 +10,8 @@ import { Hero } from "@/components/Hero/Hero";
 import { Showcase } from "@/components/Showcase/Showcase";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
+import { Social } from "@/components/Social/Social";
+import { Footer } from "@/components/Footer/Footer";
 import { StarIcon, CopyIcon, ArrowIcon } from "@/components/Icons";
 import { PROJECTS } from "@/constants/projects";
 import { ROUTES } from "@/constants/routes";
@@ -112,6 +114,8 @@ export default function Home() {
           rightActionContainer={renderShowcaseButton()}
           dataList={PROJECTS}
         />
+        <Social />
+        <Footer />
       </MainBody>
     </Main>
   );

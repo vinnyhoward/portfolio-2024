@@ -11,13 +11,13 @@ export const PROJECTS: Project[] = [
   {
     title: "CloneX Subgraph",
     techStack: "Next.js, The Graph, Prisma",
-    projectLogo: "/images/loot_chest_logo.png",
+    projectLogo: "/images/rtfkt_logo.jpeg",
     route: ROUTES.CLONEX_SUBGRAPH,
   },
   {
     title: "Loot Chest",
     techStack: "Three.js, Sanity, Web Components",
-    projectLogo: "/images/rtfkt_logo.jpeg",
+    projectLogo: "/images/loot_chest_logo.png",
     route: ROUTES.LOOT_CHEST,
   },
   {

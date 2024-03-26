@@ -1,4 +1,16 @@
-export const ROUTES = {
+interface Route {
+  HOME: string;
+  ABOUT: string;
+  HIRE: string;
+  PROJECTS: string;
+  CONTACT: string;
+  RESUME: string;
+  CLONEX_SUBGRAPH: string;
+  LOOT_CHEST: string;
+  REKO: string;
+}
+
+export const ROUTES: Route = {
   HOME: "/",
   ABOUT: "/about",
   HIRE: "/hire",

@@ -7,3 +7,7 @@ export { StarIcon } from "./StarIcon";
 export { ArrowIcon } from "./ArrowIcon";
 export { CopyIcon } from "./CopyIcon";
 export { CaretIcon } from "./CaretIcon";
+export { LinkedinIcon } from "./LinkedinIcon";
+export { GithubIcon } from "./GithubIcon";
+export { TwitterIcon } from "./TwitterIcon";
+export { InstagramIcon } from "./InstagramIcon";
