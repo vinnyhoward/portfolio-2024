@@ -45,15 +45,21 @@ export const ShowcaseContainer = styled.div`
     margin-top: 8px;
   }
 
-  .showcase__logo {
+  .showcase-image__container {
     border-radius: 50%;
-    background: ${({ theme }) => theme.colors.color1};
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 16px;
+  }
+
+  .showcase__image {
+    border: 5px solid ${({ theme }) => theme.border.colors.color1};
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
   }
 
   .showcase__text {

@@ -30,8 +30,9 @@ export const Showcase: React.FC<ShowcaseProps> = ({
         <Link key={uuidv4()} href={project.route}>
           <div className="showcase__item">
             <div className="showcase__content">
-              <div className="showcase__logo">
+              <div className="showcase-image__container">
                 <Image
+                  className="showcase__image"
                   width={45}
                   height={45}
                   src={project.projectLogo}
