@@ -22,6 +22,10 @@ const Button = styled.button<ButtonStyleProps>`
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    border 1px solid ${({ theme }) => theme.colors.color3};
+  }
+
   .icon__container {
     width: 25px;
     height: 25px;

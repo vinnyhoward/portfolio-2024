@@ -11,6 +11,7 @@ import { Showcase } from "@/components/Showcase/Showcase";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import { StarIcon, CopyIcon, ArrowIcon } from "@/components/Icons";
+import { PROJECTS } from "@/constants/projects";
 import { ROUTES } from "@/constants/routes";
 
 const Main = styled.main`
@@ -109,6 +110,7 @@ export default function Home() {
         <Showcase
           sectionHeader="Projects"
           rightActionContainer={renderShowcaseButton()}
+          dataList={PROJECTS}
         />
       </MainBody>
     </Main>

@@ -6,3 +6,4 @@ export { DarkIcon } from "./DarkIcon";
 export { StarIcon } from "./StarIcon";
 export { ArrowIcon } from "./ArrowIcon";
 export { CopyIcon } from "./CopyIcon";
+export { CaretIcon } from "./CaretIcon";
