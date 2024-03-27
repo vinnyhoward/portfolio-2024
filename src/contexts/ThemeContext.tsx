@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, ReactNode, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+} from "react";
 import {
   DefaultTheme,
   ThemeProvider as StyledThemeProvider,
@@ -25,8 +31,27 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<DefaultTheme>(lightTheme);
 
+  // check if the user system settings has a preference for dark mode
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    if (localTheme) {
+      setTheme(JSON.parse(localTheme));
+    } else if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    ) {
+      setTheme(darkTheme);
+    }
+  }, []);
+
   const toggleTheme = () => {
     setTheme(theme.name === "light" ? darkTheme : lightTheme);
+
+    if (theme.name === "light") {
+      localStorage.setItem("theme", JSON.stringify(darkTheme));
+    } else {
+      localStorage.setItem("theme", JSON.stringify(lightTheme));
+    }
   };
 
   return (

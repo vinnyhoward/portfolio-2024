@@ -1,26 +1,17 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 import { useTheme } from "@/contexts/ThemeContext";
 import { MainBody } from "@/components/MainBody/MainBody";
-import { Notification } from "@/components/Notification/Notification";
 import { Hero } from "@/components/Hero/Hero";
 import { Showcase } from "@/components/Showcase/Showcase";
-import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
-import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import { Layout } from "@/components/Layout/Layout";
-import {
-  StarIcon,
-  CopyIcon,
-  ArrowIcon,
-  OpenLinkIcon,
-} from "@/components/Icons";
+import { OpenLinkIcon } from "@/components/Icons";
 import { PROJECTS } from "@/constants/projects";
 import { COMPANIES } from "@/constants/companies";
-import { ROUTES } from "@/constants/routes";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.color2};
