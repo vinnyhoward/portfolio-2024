@@ -24,13 +24,9 @@ const FooterContainer = styled.div`
   }
 `;
 
-interface FooterProps {
-  // Define the props for your component here
-}
+interface FooterProps {}
 
 export const Footer: React.FC<FooterProps> = (props) => {
-  // Implement your component logic here
-
   return (
     <FooterContainer>
       <p>© 2024 Vincent Howard</p>

@@ -10,7 +10,10 @@ export const MainBodyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 32px 8px 8px;
-  min-height: 100vh;
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    width: 500px;
+  }
 
   h1 {
     display: flex;

@@ -2,7 +2,7 @@ import { Outfit, Roboto_Flex } from "next/font/google";
 
 const sizes = {
   sm: "480px",
-  md: "768px",
+  md: "666px",
   lg: "1024px",
   xl: "1200px",
 };
@@ -72,10 +72,10 @@ export const lightTheme = {
   },
   breakpoints: sizes,
   mediaQueries: {
-    small: `(min-width: ${sizes.sm})`,
-    medium: `(min-width: ${sizes.md})`,
-    large: `(min-width: ${sizes.lg})`,
-    extraLarge: `(min-width: ${sizes.xl})`,
+    small: `(max-width: ${sizes.sm})`,
+    medium: `(max-width: ${sizes.md})`,
+    large: `(max-width: ${sizes.lg})`,
+    extraLarge: `(max-width: ${sizes.xl})`,
   },
 };
 
@@ -132,10 +132,10 @@ export const darkTheme = {
   },
   breakpoints: sizes,
   mediaQueries: {
-    small: `(min-width: ${sizes.sm})`,
-    medium: `(min-width: ${sizes.md})`,
-    large: `(min-width: ${sizes.lg})`,
-    extraLarge: `(min-width: ${sizes.xl})`,
+    small: `(max-width: ${sizes.sm})`,
+    medium: `(max-width: ${sizes.md})`,
+    large: `(max-width: ${sizes.lg})`,
+    extraLarge: `(max-width: ${sizes.xl})`,
   },
 };
 

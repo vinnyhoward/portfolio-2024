@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   HomeIcon,
   ProfileIcon,
@@ -11,9 +12,11 @@ import {
 import { useTheme } from "../../contexts/ThemeContext";
 import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
 import { NavContainer } from "./NavBar.styles";
+import { ROUTES } from "../../constants/routes";
 
 export const NavBar = () => {
   const { theme, toggleTheme } = useTheme();
+  const router = useRouter();
   const isLightTheme = theme.name === "light";
   const iconColor = theme.fontColor.fontColor1;
   const buttonIconColor = isLightTheme
@@ -52,7 +55,7 @@ export const NavBar = () => {
           <PrimaryButton
             buttonIcon={<StarIcon fill={buttonIconColor} />}
             buttonText="Hire Me!"
-            onClick={() => console.log("clicked")}
+            onClick={() => router.push(ROUTES.HIRE, { scroll: false })}
           />
         </div>
       </div>

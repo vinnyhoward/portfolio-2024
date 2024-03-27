@@ -4,15 +4,15 @@ import { HeroContainer } from "./Hero.styles";
 interface HeroProps {
   title: string;
   caption: string;
-  imageUrl: string;
-  extraNode?: React.ReactNode;
+  imageUrl?: string | null;
+  extraNode?: React.ReactNode | null;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   title,
   caption,
-  imageUrl,
-  extraNode,
+  imageUrl = null,
+  extraNode = null,
 }) => {
   return (
     <HeroContainer>
@@ -21,17 +21,21 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="title">{title}</div>
           <p>{caption}</p>
         </div>
-        <div className="image__container">
-          <Image
-            className="hero__image"
-            src={imageUrl}
-            alt={title}
-            width={160}
-            height={160}
-          />
-        </div>
+        {imageUrl ? (
+          <div className="image__container">
+            <Image
+              className="hero__image"
+              src={imageUrl}
+              alt={title}
+              width={160}
+              height={160}
+            />
+          </div>
+        ) : null}
       </div>
-      <div className="extra-node__container">{extraNode}</div>
+      {extraNode ? (
+        <div className="extra-node__container">{extraNode}</div>
+      ) : null}
     </HeroContainer>
   );
 };

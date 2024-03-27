@@ -76,7 +76,7 @@ export default function Home() {
           <PrimaryButton
             buttonIcon={<StarIcon fill={primaryIconColor} />}
             buttonText="Hire Me!"
-            onClick={() => console.log("clicked")}
+            onClick={() => router.push(ROUTES.HIRE, { scroll: false })}
           />
         </div>
         <div className="btn">
