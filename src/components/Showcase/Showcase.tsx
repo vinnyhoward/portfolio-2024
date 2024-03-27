@@ -16,7 +16,7 @@ interface ShowcaseProps {
 }
 
 export const Showcase: React.FC<ShowcaseProps> = ({
-  sectionHeader = "Section Header",
+  sectionHeader,
   rightActionContainer = null,
   dataList,
   icon,

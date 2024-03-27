@@ -48,7 +48,7 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader: React.FC<SectionHeaderProps> = ({
-  sectionHeader = "Software Developer",
+  sectionHeader,
   rightActionContainer = null,
 }) => {
   const { theme } = useTheme();
@@ -56,12 +56,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   return (
     <SectionHeaderContainer>
       <div className="title__container">
-        <h1>
-          <div className="icon__container">
-            <ArrowIcon fill={iconColor} />
-          </div>
-          {sectionHeader}
-        </h1>
+        {sectionHeader ? (
+          <h1>
+            <div className="icon__container">
+              <ArrowIcon fill={iconColor} />
+            </div>
+            {sectionHeader}
+          </h1>
+        ) : null}
         <div className="right-action__container">{rightActionContainer}</div>
       </div>
     </SectionHeaderContainer>

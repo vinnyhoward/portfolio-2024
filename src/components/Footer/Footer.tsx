@@ -13,10 +13,9 @@ const FooterContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.color7};
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
-  margin: 24px 0px;
+  margin: 12px 0px;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    margin: 12px 0;
     padding: 24px 12px;
   }
 
