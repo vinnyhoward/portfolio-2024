@@ -4,8 +4,9 @@ export async function POST(request: Request): Promise<Response> {
   try {
     const data = await request.formData();
     const email = data.get("email") as string;
-    const username = data.get("username") as string;
+    const username = data.get("name") as string;
     const message = data.get("message") as string;
+
     console.log("form data", {
       email,
       username,
@@ -17,7 +18,7 @@ export async function POST(request: Request): Promise<Response> {
         message: "Missing required fields",
       });
     }
-
+    g;
     const publicEmail = process.env.NEXT_PUBLIC_EMAIL as string;
     const mailerSend = new MailerSend({
       apiKey: process.env.NEXT_PUBLIC_MAILERSEND_API_KEY as string,

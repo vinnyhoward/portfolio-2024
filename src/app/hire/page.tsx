@@ -1,17 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import styled from "styled-components";
-import { useTheme } from "@/contexts/ThemeContext";
 import { MainBody } from "@/components/MainBody/MainBody";
 import { Notification } from "@/components/Notification/Notification";
 import { Hero } from "@/components/Hero/Hero";
-import { Showcase } from "@/components/Showcase/Showcase";
-import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
-import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import { Layout } from "@/components/Layout/Layout";
 
 const HireContainer = styled.div`
   padding: 6rem;
+
 
   .form__container {
     display: flex;
@@ -39,6 +37,7 @@ const HireContainer = styled.div`
     border: 1px solid ${({ theme }) => theme.border.colors.color1};
     background-color: ${({ theme }) => theme.colors.color7};
     font-size: ${({ theme }) => theme.fontSize.md};
+    color: ${({ theme }) => theme.fontColor.fontColor1};
     border-radius: 5px;
     height: 50px;
     padding: 1rem;
@@ -64,6 +63,40 @@ const HireContainer = styled.div`
     height: 200px;
     margin-top: 1rem;
   }
+
+  button {
+  border-radius: 6px;
+  background-color: ${({ theme }) => theme.colors.color3};
+  color: ${({ theme }) => theme.fontColor.fontColor2};
+  height: 40px;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: ${({ theme }) => theme.fontSize.md};
+  font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
+  border: none;
+  transition: background-color 0.5s;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  height: 50px;
+  margin-bottom: 6rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
+  color: ${({ theme }) =>
+    theme.name === "light"
+      ? theme.fontColor.fontColor2
+      : theme.fontColor.fontColor1};
+
+  &:hover  {
+    border 1px solid ${({ theme }) => theme.colors.color3};
+    }
+  }
 `;
 
 interface Props {}
@@ -77,6 +110,33 @@ const heroProps = {
 };
 
 const Home: React.FC<Props> = () => {
+  const [isSubmitted, setSubmitted] = useState(false);
+
+  const onSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ): Promise<void> => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        console.log("Email sent successfully", result);
+      } else {
+        console.error("Failed to send email", result);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
+  };
+
   return (
     <HireContainer>
       <MainBody
@@ -86,7 +146,7 @@ const Home: React.FC<Props> = () => {
       >
         <Layout hideContactBanner>
           <div className="form__container">
-            <form className="form">
+            <form onSubmit={onSubmit} className="form">
               <div className="flex-row">
                 <input
                   className="form__input"
@@ -113,6 +173,9 @@ const Home: React.FC<Props> = () => {
                   rows={10}
                 />
               </div>
+              <button type="submit">
+                {isSubmitted ? "Inquiry Submitted!" : "Submit Inquiry"}
+              </button>
             </form>
           </div>
         </Layout>

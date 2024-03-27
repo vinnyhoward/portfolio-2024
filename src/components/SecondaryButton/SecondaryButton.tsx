@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 interface ButtonStyleProps {
   outline?: boolean;
-  reverse?: boolean;
+  reverse?: string;
 }
 
 const Button = styled.button<ButtonStyleProps>`
@@ -16,7 +16,8 @@ const Button = styled.button<ButtonStyleProps>`
   font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
   transition: background-color 0.5s;
   display: flex;
-  flex-direction: ${({ reverse }) => (reverse ? "row-reverse" : "row")};
+  flex-direction: ${({ reverse }) =>
+    Boolean(reverse) ? "row-reverse" : "row"};
   justify-content: center;
   align-items: center;
 
@@ -27,7 +28,7 @@ const Button = styled.button<ButtonStyleProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: ${({ reverse }) => (reverse ? "0 0 0 8px" : "0 8px 0 0")};
+    margin: ${({ reverse }) => (Boolean(reverse) ? "0 0 0 8px" : "0 8px 0 0")};
   }
 
   .btn__text {
@@ -49,17 +50,17 @@ interface ButtonProps {
   buttonText: string;
   buttonIcon?: React.ReactNode;
   outline?: boolean;
-  reverse?: boolean;
+  reverse?: string;
 }
 
 export const SecondaryButton: React.FC<ButtonProps> = ({
   onClick,
   buttonText,
   buttonIcon,
-  reverse = false,
+  reverse = "false",
 }) => {
   return (
-    <Button {...{ reverse }} onClick={onClick}>
+    <Button reverse={reverse.toString()} onClick={onClick}>
       {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
       <div className="btn__text">{buttonText}</div>
     </Button>

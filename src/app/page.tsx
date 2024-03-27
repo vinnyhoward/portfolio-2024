@@ -93,7 +93,7 @@ export default function Home() {
   const renderShowcaseButton = () => {
     return (
       <SecondaryButton
-        reverse
+        reverse={"true"}
         buttonIcon={<ArrowIcon fill={secondaryIconColor} />}
         buttonText="View All"
         onClick={() => router.push(ROUTES.PROJECTS, { scroll: false })}
