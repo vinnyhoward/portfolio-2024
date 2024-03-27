@@ -21,7 +21,6 @@ const HireContainer = styled.div`
   padding: 4.7rem 0.4rem;
 }
 
-
   .form__container {
     display: flex;
     justify-content: center;
@@ -93,14 +92,9 @@ const HireContainer = styled.div`
   font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
   border: none;
   transition: background-color 0.5s;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   margin-top: 1rem;
   height: 50px;
   margin-bottom: 6rem;
-
   display: flex;
   flex-direction: row;
   align-items: center;

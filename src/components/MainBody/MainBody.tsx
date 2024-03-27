@@ -10,7 +10,7 @@ interface MainBodyProps {
 }
 
 export const MainBody: React.FC<MainBodyProps> = ({
-  sectionHeader = "Software Developer",
+  sectionHeader,
   rightActionContainer = null,
   heroContainer = null,
   children,

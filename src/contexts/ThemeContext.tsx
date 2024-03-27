@@ -31,7 +31,6 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<DefaultTheme>(lightTheme);
 
-  // check if the user system settings has a preference for dark mode
   useEffect(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {

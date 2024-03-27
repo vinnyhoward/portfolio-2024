@@ -34,7 +34,7 @@ const Home: React.FC<Props> = () => {
   const secondaryIconColor = theme.fontColor.fontColor1;
 
   const heroProps = {
-    title: "My Projects",
+    title: "CloneX Subgraph",
     caption:
       "I have worked on a variety of projects ranging from web development to mobile development. Here are some of the projects I have worked on as well as past companies I have worked for",
     imageUrl: null,
@@ -53,23 +53,10 @@ const Home: React.FC<Props> = () => {
   return (
     <Main ref={el}>
       <MainBody
-        sectionHeader="My Projects"
         rightActionContainer={null}
         heroContainer={<Hero {...heroProps} />}
       >
-        <Layout>
-          <Showcase
-            sectionHeader="Projects"
-            rightActionContainer={null}
-            dataList={PROJECTS}
-          />
-          <Showcase
-            sectionHeader="Past Companies"
-            rightActionContainer={null}
-            dataList={COMPANIES}
-            icon={<OpenLinkIcon fill={secondaryIconColor} />}
-          />
-        </Layout>
+        <Layout>Hello</Layout>
       </MainBody>
     </Main>
   );
