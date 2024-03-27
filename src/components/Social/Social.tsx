@@ -16,6 +16,11 @@ const SocialContainer = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   margin: 24px 0px;
 
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    margin: 0px 0px;
+    padding: 24px 12px;
+  }
+
   .section__container {
     display: flex;
     flex-direction: column;
@@ -42,6 +47,10 @@ const SocialContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      margin: 0 2.5px;
+    }
   }
 `;
 
@@ -50,7 +59,7 @@ interface SocialProps {}
 export const Social: React.FC<SocialProps> = () => {
   const { theme } = useTheme();
   const primaryIconColor = theme.fontColor.fontColor1;
-  const iconSize = 28;
+  const iconSize = 24;
   return (
     <SocialContainer>
       <div className="section__container">

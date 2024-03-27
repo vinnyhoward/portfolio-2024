@@ -15,6 +15,11 @@ const FooterContainer = styled.div`
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   margin: 24px 0px;
 
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    margin: 12px 0;
+    padding: 24px 12px;
+  }
+
   p {
     font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
     font-size: ${({ theme }) => theme.fontSize.lg};

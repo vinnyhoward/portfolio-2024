@@ -12,7 +12,8 @@ export const MainBodyContainer = styled.div`
   padding: 32px 8px 8px;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
-    width: 500px;
+    padding: 16px 8px 8px;
+    width: 100%;
   }
 
   h1 {
@@ -25,6 +26,10 @@ export const MainBodyContainer = styled.div`
   .children__container {
     width: 100%;
     padding: 0px 25px;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      padding: 0 1px;
+    }
   }
 
   .hero {
@@ -37,5 +42,9 @@ export const MainBodyContainer = styled.div`
   .section__container {
     padding: 0px 25px;
     width: 100%;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      padding: 0 1px;
+    }
   }
 `;

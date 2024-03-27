@@ -46,6 +46,10 @@ const Button = styled.button<ButtonStyleProps>`
       theme.name === "light"
         ? theme.fontColor.fontColor2
         : theme.fontColor.fontColor1};
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      font-size: ${({ theme }) => theme.fontSize.sm};
+    }
   }
 `;
 

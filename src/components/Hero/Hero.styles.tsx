@@ -35,6 +35,10 @@ export const HeroContainer = styled.div`
     display: flex;
     flex-direction: row;
     padding: 0 25px;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      padding: 0 10px;
+    }
   }
 
   .hero__text {
@@ -67,5 +71,9 @@ export const HeroContainer = styled.div`
     padding: 0 25px;
     color: black;
     width: 100%;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      padding: 0 10px;
+    }
   }
 `;

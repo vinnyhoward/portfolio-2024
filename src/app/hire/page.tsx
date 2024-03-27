@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import styled from "styled-components";
 import { MainBody } from "@/components/MainBody/MainBody";
 import { Notification } from "@/components/Notification/Notification";
@@ -9,6 +10,12 @@ import { Layout } from "@/components/Layout/Layout";
 
 const HireContainer = styled.div`
   padding: 6rem;
+
+  width: 100%;
+
+@media ${({ theme }) => theme.mediaQueries.medium} {
+  padding: 4.7rem 0.4rem;
+}
 
 
   .form__container {
@@ -29,6 +36,10 @@ const HireContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      flex-direction: column;
+    }
   }
 
   .form__textarea,
@@ -46,6 +57,9 @@ const HireContainer = styled.div`
 
     &:nth-child(1) {
       margin-right: 0.5rem;
+      @media ${({ theme }) => theme.mediaQueries.medium} {
+        margin-right: 0;
+      }
     }
 
     &:focus {
@@ -111,6 +125,7 @@ const heroProps = {
 
 const Home: React.FC<Props> = () => {
   const [isSubmitted, setSubmitted] = useState(false);
+  const el = useRef<HTMLDivElement>(null);
 
   const onSubmit = async (
     e: React.FormEvent<HTMLFormElement>
@@ -128,17 +143,29 @@ const Home: React.FC<Props> = () => {
       const result = await response.json();
 
       if (response.ok) {
+        setSubmitted(true);
         console.log("Email sent successfully", result);
       } else {
         console.error("Failed to send email", result);
       }
     } catch (error) {
+      setSubmitted(false);
       console.error("Network error:", error);
     }
   };
 
+  useEffect(() => {
+    if (el.current) {
+      gsap.fromTo(
+        el.current.children,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.05, delay: 0.1 }
+      );
+    }
+  }, []);
+
   return (
-    <HireContainer>
+    <HireContainer ref={el}>
       <MainBody
         sectionHeader="Hire Me"
         rightActionContainer={<Notification message="Available for work" />}

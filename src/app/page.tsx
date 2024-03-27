@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import styled from "styled-components";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -28,7 +29,11 @@ const Main = styled.main`
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  width: 100%;
+
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    padding: 4.7rem 0.4rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -44,6 +49,7 @@ const ButtonContainer = styled.div`
 
 export default function Home() {
   const [isCopied, setIsCopied] = useState(false);
+  const el = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   const router = useRouter();
 
@@ -100,6 +106,17 @@ export default function Home() {
       />
     );
   };
+
+  useEffect(() => {
+    if (el.current) {
+      gsap.fromTo(
+        el.current.children,
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.05, delay: 0.1 }
+      );
+    }
+  }, []);
+
   const heroProps = {
     title: "I'm Vince Howard 👋",
     caption:
@@ -108,7 +125,7 @@ export default function Home() {
     extraNode: renderButtons(),
   };
   return (
-    <Main>
+    <Main ref={el}>
       <MainBody
         sectionHeader="Software Engineer"
         rightActionContainer={<Notification message="Available for work" />}

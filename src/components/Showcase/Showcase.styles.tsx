@@ -12,6 +12,10 @@ export const ShowcaseContainer = styled.div`
   width: 100%;
   margin-top: 24px;
 
+  @media ${({ theme }) => theme.mediaQueries.medium} {
+    padding: 24px 12px;
+  }
+
   .showcase__list {
     width: 100%;
     margin-top: 24px;
@@ -53,6 +57,10 @@ export const ShowcaseContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-right: 16px;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      margin-right: 10px;
+    }
   }
 
   .showcase__image {

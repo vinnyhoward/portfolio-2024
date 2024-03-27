@@ -21,6 +21,10 @@ const SectionHeaderContainer = styled.div`
       font-weight: 500;
       font-size: ${({ theme }) => theme.fontSize.xl};
       color: ${({ theme }) => theme.fontColor.fontColor3};
+
+      @media ${({ theme }) => theme.mediaQueries.medium} {
+        font-size: ${({ theme }) => theme.fontSize.md};
+      }
     }
   }
 

@@ -18,7 +18,7 @@ export async function POST(request: Request): Promise<Response> {
         message: "Missing required fields",
       });
     }
-    g;
+
     const publicEmail = process.env.NEXT_PUBLIC_EMAIL as string;
     const mailerSend = new MailerSend({
       apiKey: process.env.NEXT_PUBLIC_MAILERSEND_API_KEY as string,
