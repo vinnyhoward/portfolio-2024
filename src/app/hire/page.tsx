@@ -9,8 +9,12 @@ import { Hero } from "@/components/Hero/Hero";
 import { Layout } from "@/components/Layout/Layout";
 
 const HireContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.color2};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 6rem;
-
   width: 100%;
 
 @media ${({ theme }) => theme.mediaQueries.medium} {
