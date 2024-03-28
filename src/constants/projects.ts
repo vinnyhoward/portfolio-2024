@@ -5,6 +5,10 @@ export interface Project {
   techStack: string;
   projectLogo: string;
   route: string;
+  links?: {
+    title: string;
+    url: string;
+  }[];
 }
 
 export const PROJECTS: Project[] = [

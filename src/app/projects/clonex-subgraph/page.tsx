@@ -198,11 +198,21 @@ const Home: React.FC<Props> = () => {
           <div className="content__container">
             <h2 className="section-title">Purpose</h2>
             <p className="caption">
-              The tech stack for the frontend of the CloneX Subgraph Explorer
-              was built with Next.js, Typescript, GraphQL, Prisma and Styled
-              Components. The CloneX Subgraph was built with The Graph, a
-              decentralized protocol for indexing and querying data from
-              blockchains.
+              The purpose of this project was to learn{" "}
+              <a
+                className="link"
+                href="https://thegraph.com/docs/en/"
+                target="_blank"
+              >
+                The Graph
+              </a>{" "}
+              by building a subgraph for the CloneX NFT collection. The CloneX
+              Subgraph Explorer allows users to browse, search, and analyze
+              CloneX collection NFTs in real-time. The CloneX collection is a
+              project created by{" "}
+              <a href="https://www.rtfkt.com/" target="_blank">
+                RTFKT Studios
+              </a>
             </p>
           </div>
 
