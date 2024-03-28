@@ -14,3 +14,5 @@ export { InstagramIcon } from "./InstagramIcon";
 export { OpenLinkIcon } from "./OpenLinkIcon";
 export { FigmaIcon } from "./FigmaIcon";
 export { WebsiteIcon } from "./WebsiteIcon";
+export { AppleIcon } from "./AppleIcon";
+export { GooglePlayIcon } from "./GooglePlayIcon";

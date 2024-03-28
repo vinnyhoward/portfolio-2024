@@ -14,7 +14,8 @@ import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import {
   GithubIcon,
-  FigmaIcon,
+  GooglePlayIcon,
+  AppleIcon,
   WebsiteIcon,
   ArrowIcon,
 } from "@/components/Icons";
@@ -75,6 +76,12 @@ const ButtonContainer = styled.div`
   .btn {
     margin-right: 15px;
   }
+
+  @media ${({ theme }) => theme.mediaQueries.small} {
+    .github {
+      display: none;
+    }
+  }
 `;
 
 interface Props {}
@@ -95,30 +102,40 @@ const Home: React.FC<Props> = () => {
       <ButtonContainer>
         <div className="btn">
           <PrimaryButton
-            buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
-            buttonText="Website"
-            onClick={() => window.open("https://lootchest.lol/", "_blank")}
-          />
-        </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<GithubIcon fill={primaryIconColor} />}
-            buttonText="Github"
-            onClick={() =>
-              window.open("https://github.com/vinnyhoward/loot-chest", "_blank")
-            }
-          />
-        </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<FigmaIcon fill={primaryIconColor} />}
-            buttonText="Figma"
+            buttonIcon={<AppleIcon fill={primaryIconColor} />}
+            buttonText="App Store"
             onClick={() =>
               window.open(
-                "https://www.figma.com/file/yo4yZHmceBc5z21Vr7i3L2/Loot-Chest?type=design&node-id=182%3A358&mode=design&t=VDEqD5bceh6140FQ-1",
+                "https://apps.apple.com/us/app/reko-locally-produced-food/id1511967191",
                 "_blank"
               )
             }
+          />
+        </div>
+        <div className="btn">
+          <PrimaryButton
+            buttonIcon={<GooglePlayIcon fill={primaryIconColor} />}
+            buttonText="Play Store"
+            onClick={() =>
+              window.open(
+                "https://play.google.com/store/apps/details?id=com.rumbly&hl=en_US&gl=US",
+                "_blank"
+              )
+            }
+          />
+        </div>
+        <div className="btn">
+          <PrimaryButton
+            buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
+            buttonText="Website"
+            onClick={() => window.open("https://rekohub.com/", "_blank")}
+          />
+        </div>
+        <div className="btn github">
+          <SecondaryButton
+            buttonIcon={<GithubIcon fill={secondaryIconColor} />}
+            buttonText="Private"
+            onClick={() => null}
           />
         </div>
       </ButtonContainer>
@@ -139,12 +156,14 @@ const Home: React.FC<Props> = () => {
   const renderCaption = (): JSX.Element => {
     return (
       <>
-        This project delivers a web-based 3D chest-opening experience,
-        captivating users by allowing them to uncover virtual treasures.
-        It&apos;s designed to engage users through a seamless exploration of
-        interactive visualizations, where they can win prizes based on the
-        rarity of the items found, ensuring a continuously fresh and immersive
-        experience.
+        Reko is an innovative platform championing the local food movement,
+        designed to connect users with the best locally produced foods - from
+        artisan bread and grass-fed beef to garden-fresh produce. It offers a
+        seamless marketplace for consumers to discover and purchase local
+        delicacies, and for producers to manage sales, inventory, and payments
+        efficiently. Reko embodies the essence of local living, promoting
+        healthier lifestyles, stronger economies, and environmental
+        sustainability.
       </>
     );
   };
@@ -160,9 +179,9 @@ const Home: React.FC<Props> = () => {
   }, []);
 
   const heroProps = {
-    title: "Loot Chest",
+    title: "Reko",
     caption: renderCaption(),
-    logoUrl: PROJECTS[1].projectLogo,
+    logoUrl: PROJECTS[2].projectLogo,
     imageUrl: null,
     extraNode: renderButtons(),
   };
@@ -177,8 +196,8 @@ const Home: React.FC<Props> = () => {
           <div className="image__container">
             <Image
               className="hero__image"
-              src="/images/loot_chest_mock_shot_1.png"
-              alt="Loot Chest"
+              src="/images/reko_mock_shot_1.png"
+              alt="Reko"
               layout="responsive"
               width={650}
               height={650}
@@ -188,23 +207,20 @@ const Home: React.FC<Props> = () => {
           <div className="content__container">
             <h2 className="section-title">Purpose</h2>
             <p className="caption">
-              The primary purpose behind creating this project was to challenge
-              myself with the development of a 3D web-based application without
-              relying on popular libraries or frameworks such as React or Vue.
-              Driven by a desire to deepen my understanding and practical skills
-              in using web components and browser APIs directly, I aimed to
-              craft a fun and addictive user experience. This project represents
-              not just a technical journey but also my commitment to pushing the
-              boundaries of web development to create engaging and interactive
-              visualizations.
+              Joining Reko as a contributing contractor, my goal was to immerse
+              myself in a project that stands at the forefront of innovation.
+              Reko&apos;s commitment to localizing food production resonated
+              with my desire to work on initiatives that not only embrace new
+              ideas but also have a meaningful impact on health, economy, and
+              environment.
             </p>
           </div>
 
           <div className="image__container">
             <Image
               className="hero__image"
-              src="/images/loot_home.png"
-              alt="Loot Chest Home Page"
+              src="/images/reko_home.png"
+              alt="Reko Home Page"
               layout="responsive"
               width={650}
               height={650}
@@ -214,123 +230,42 @@ const Home: React.FC<Props> = () => {
           <div className="content__container">
             <h2 className="section-title">Tech Stack</h2>
             <p className="caption">
-              <a
-                className="link"
-                href="https://github.com/vinnyhoward/loot-chest"
-                target="_blank"
-              >
-                Frontend:
-              </a>{" "}
-              The frontend is built with a focus on cutting-edge technologies
-              and performance optimization, utilizing{" "}
-              <a
-                className="link"
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                TypeScript
-              </a>
-              ,{" "}
-              <a
-                className="link"
-                href="https://vitejs.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Vite
-              </a>
-              ,{" "}
-              <a
-                className="link"
-                href="https://threejs.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Three.js
-              </a>
-              ,{" "}
-              <a
-                className="link"
-                href="https://bun.sh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bun.js
-              </a>
-              , and{" "}
-              <a
-                className="link"
-                href="https://www.sanity.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Sanity
-              </a>{" "}
-              for dynamic content management.
+              The Reko project leverages modern development frameworks and
+              services for both its seamless cross-platform functionality. The
+              tech stack includes:
             </p>
             <p className="caption">
+              <strong>Frontend and Cross-Platform:</strong> Engineered to
+              provide a unified experience across web and mobile, the
+              application is built using{" "}
               <a
                 className="link"
-                href="https://github.com/vinnyhoward/loot-chest-backend"
+                href="https://reactnative.dev/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                Backend:
+                React Native
               </a>{" "}
-              The backend infrastructure, designed for robustness, leverages{" "}
+              and{" "}
               <a
                 className="link"
-                href="https://www.typescriptlang.org/"
+                href="https://necolas.github.io/react-native-web/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                TypeScript
+                React Native Web
               </a>
-              ,{" "}
+              , with{" "}
               <a
                 className="link"
-                href="https://elysiajs.com/"
+                href="https://expo.dev/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Elysia.js
+                Expo
               </a>{" "}
-              <a
-                className="link"
-                href="https://www.prisma.io/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Prisma
-              </a>
-              ,{" "}
-              <a
-                className="link"
-                href="https://www.postgresql.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                PostgreSQL
-              </a>
-              ,{" "}
-              <a
-                className="link"
-                href="https://www.docker.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Docker
-              </a>
-              , and{" "}
-              <a
-                className="link"
-                href="https://bun.sh/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                BunJS
-              </a>{" "}
-              for modern and efficient web development practices.
+              for an accelerated development cycle and streamlined deployment
+              process.
             </p>
           </div>
 
@@ -338,8 +273,7 @@ const Home: React.FC<Props> = () => {
             sectionHeader="Other Projects"
             rightActionContainer={renderShowcaseButton()}
             dataList={PROJECTS.filter(
-              (project) =>
-                project.title !== "Loot Chest" && project.title !== "Loot Chest"
+              (project) => project.title !== "Reko" && project.title !== "Reko"
             )}
           />
         </Layout>
