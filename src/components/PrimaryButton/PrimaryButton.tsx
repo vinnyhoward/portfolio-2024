@@ -24,7 +24,7 @@ const Button = styled.button<ButtonStyleProps>`
   align-items: center;
 
   &:hover {
-    border 1px solid ${({ theme }) => theme.colors.color3};
+    /* border 1px solid ${({ theme }) => theme.colors.color3}; */
   }
 
   .icon__container {
@@ -37,7 +37,7 @@ const Button = styled.button<ButtonStyleProps>`
   }
 
   .btn__text {
-      display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     font-size: ${({ theme }) => theme.fontSize.md};

@@ -12,3 +12,5 @@ export { GithubIcon } from "./GithubIcon";
 export { TwitterIcon } from "./TwitterIcon";
 export { InstagramIcon } from "./InstagramIcon";
 export { OpenLinkIcon } from "./OpenLinkIcon";
+export { FigmaIcon } from "./FigmaIcon";
+export { WebsiteIcon } from "./WebsiteIcon";

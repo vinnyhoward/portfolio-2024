@@ -43,8 +43,8 @@ export const NavContainer = styled.nav`
   }
 
   li:hover {
-    background-color: ${({ theme }) => theme.colors.color2};
-    transition: background-color 0.5s;
+    /* background-color: ${({ theme }) => theme.colors.color2};
+    transition: background-color 0.5s; */
   }
 
   .interaction-container {
@@ -55,9 +55,9 @@ export const NavContainer = styled.nav`
     color: black;
 
     div:hover {
-      background-color: ${({ theme }) => theme.colors.color2};
+      /* background-color: ${({ theme }) => theme.colors.color2};
       transition: background-color 0.5s;
-      border-radius: 50%;
+      border-radius: 50%; */
     }
 
     .btn__container {

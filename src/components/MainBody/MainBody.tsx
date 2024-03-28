@@ -18,10 +18,12 @@ export const MainBody: React.FC<MainBodyProps> = ({
   return (
     <MainBodyContainer>
       <div className="section__container">
-        <SectionHeader
-          sectionHeader={sectionHeader}
-          rightActionContainer={rightActionContainer}
-        />
+        {rightActionContainer || heroContainer ? (
+          <SectionHeader
+            sectionHeader={sectionHeader}
+            rightActionContainer={rightActionContainer}
+          />
+        ) : null}
       </div>
       <div className="hero">{heroContainer}</div>
       <div className="children__container">{children}</div>

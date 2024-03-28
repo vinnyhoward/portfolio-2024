@@ -76,4 +76,10 @@ export const HeroContainer = styled.div`
       padding: 0 10px;
     }
   }
+
+  .hero__logo {
+    border-radius: 50%;
+    border: 10px solid #f7f7f7;
+    margin-bottom: 15px;
+  }
 `;

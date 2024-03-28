@@ -19,7 +19,7 @@ export const ROUTES: Route = {
   RESUME: "/resume",
 
   // project sub pages
-  CLONEX_SUBGRAPH: "/projects/cloneX-subgraph",
+  CLONEX_SUBGRAPH: "/projects/clonex-subgraph",
   LOOT_CHEST: "/projects/loot-chest",
   REKO: "/projects/reko",
 };
