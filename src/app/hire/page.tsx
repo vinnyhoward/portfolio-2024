@@ -98,6 +98,7 @@ const HireContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   font-size: ${({ theme }) => theme.fontSize.xl};
   font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
   color: ${({ theme }) =>
@@ -179,6 +180,7 @@ const Home: React.FC<Props> = () => {
                   id="name"
                   name="name"
                   placeholder="Name"
+                  disabled={isSubmitted}
                 />
 
                 <input
@@ -187,6 +189,7 @@ const Home: React.FC<Props> = () => {
                   id="email"
                   name="email"
                   placeholder="Email"
+                  disabled={isSubmitted}
                 />
               </div>
               <div>
@@ -196,9 +199,10 @@ const Home: React.FC<Props> = () => {
                   name="message"
                   placeholder="Message"
                   rows={10}
+                  disabled={isSubmitted}
                 />
               </div>
-              <button type="submit">
+              <button disabled={isSubmitted} type="submit">
                 {isSubmitted ? "Inquiry Submitted!" : "Submit Inquiry"}
               </button>
             </form>
