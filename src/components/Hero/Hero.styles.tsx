@@ -28,7 +28,7 @@ export const HeroContainer = styled.div`
     color: ${({ theme }) => theme.fontColor.fontColor4};
     font-size: ${({ theme }) => theme.fontSize.xl};
     line-height: 1.5;
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .hero__content {
