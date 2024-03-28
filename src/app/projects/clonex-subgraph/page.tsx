@@ -172,7 +172,7 @@ const Home: React.FC<Props> = () => {
   const heroProps = {
     title: "CloneX Subgraph",
     caption: renderCaption(),
-    logoUrl: "/images/rtfkt_logo.jpeg",
+    logoUrl: "/images/rtfkt_logo.png",
     imageUrl: null,
     extraNode: renderButtons(),
   };

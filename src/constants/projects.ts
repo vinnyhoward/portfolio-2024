@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
   {
     title: "CloneX Subgraph",
     techStack: "Next.js, The Graph, Prisma",
-    projectLogo: "/images/rtfkt_logo.jpeg",
+    projectLogo: "/images/rtfkt_logo.png",
     route: ROUTES.CLONEX_SUBGRAPH,
   },
   {
