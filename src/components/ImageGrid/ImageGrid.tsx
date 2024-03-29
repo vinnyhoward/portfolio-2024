@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { ImageGridContainer, ImageSmall, ImageLarge } from "./ImageGrid.styles";
-import exp from "constants";
 
 export type ImageGridObj = {
   id: string;

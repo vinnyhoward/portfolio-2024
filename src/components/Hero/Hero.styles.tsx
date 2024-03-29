@@ -14,6 +14,10 @@ export const HeroContainer = styled.div`
   position: relative;
   width: 100%;
 
+  /* @media ${({ theme }) => theme.mediaQueries.medium} {
+    justify-content: center;
+  } */
+
   .title {
     font-size: 3rem;
     font-family: ${({ theme }) => theme.fontFamily.outfit};
@@ -21,6 +25,10 @@ export const HeroContainer = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xxxl};
     font-weight: 700;
     margin: 0;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      margin-top: 20px;
+    }
   }
 
   p {
@@ -29,6 +37,10 @@ export const HeroContainer = styled.div`
     font-size: ${({ theme }) => theme.fontSize.xl};
     line-height: 1.5;
     margin: 20px 0;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      text-align: center;
+    }
   }
 
   .hero__content {
@@ -38,6 +50,7 @@ export const HeroContainer = styled.div`
 
     @media ${({ theme }) => theme.mediaQueries.medium} {
       padding: 0 10px;
+      flex-direction: column-reverse;
     }
   }
 
@@ -46,6 +59,10 @@ export const HeroContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+
+    @media ${({ theme }) => theme.mediaQueries.medium} {
+      align-items: center;
+    }
   }
 
   .image__container {
@@ -74,6 +91,7 @@ export const HeroContainer = styled.div`
 
     @media ${({ theme }) => theme.mediaQueries.medium} {
       padding: 0 10px;
+      justify-content: center;
     }
   }
 
