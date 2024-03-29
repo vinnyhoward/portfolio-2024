@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+import NextImage from "next/image";
+import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import styled from "styled-components";
@@ -12,6 +13,7 @@ import { Showcase } from "@/components/Showcase/Showcase";
 import { Layout } from "@/components/Layout/Layout";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
+import { ImageGrid, ImageGridObj } from "@/components/ImageGrid/ImageGrid";
 import {
   GithubIcon,
   FigmaIcon,
@@ -108,12 +110,59 @@ const Home: React.FC<Props> = () => {
     extraNode: null,
   };
 
-  // About Me
-  // Work experience
-  // Education and past work experience
-  // Hobbies
-  // Pets
-  // Check out my past side projects
+  const fitnessImageGridData: ImageGridObj[] = [
+    {
+      id: uuidv4(),
+      url: "/images/spartan_1.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/spartan_2.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/spartan_3.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/spartan_4.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/marathon_1.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/dirty_dash1.jpg",
+    },
+  ];
+
+  const chesterImageGridData: ImageGridObj[] = [
+    {
+      id: uuidv4(),
+      url: "/images/chester1.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/chester2.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/chester3.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/chester4.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/chester5.jpg",
+    },
+    {
+      id: uuidv4(),
+      url: "/images/chester6.jpg",
+    },
+  ];
 
   return (
     <Main ref={el}>
@@ -124,26 +173,44 @@ const Home: React.FC<Props> = () => {
       >
         <Layout>
           <div className="image__container">
-            <Image
+            <NextImage
               className="hero__image"
               src="/images/about_profile.jpg"
               alt="it me"
-              layout="responsive"
+              priority
               width={650}
               height={650}
             />
           </div>
 
           <div className="content__container">
-            <h2 className="section-title">More about me</h2>
+            <h2 className="section-title">What I like to do for fun</h2>
             <p className="caption">
               When I&apos;m not being a shut in and coding my life away, I enjoy
-              fitness related things. Maybe a little too much. I love to
-              strength train, body build, run and attend obstacle races. More
-              specifically the Spartan Races
+              fitness-related activities—maybe a little too much. I have a
+              passion for strength training, bodybuilding, running, and
+              participating in obstacle races, particularly Spartan races.
             </p>
           </div>
 
+          <ImageGrid imageArr={fitnessImageGridData} />
+
+          <div className="content__container">
+            <h2 className="section-title">Also here is a picture of my cat</h2>
+            <p className="caption">
+              Just some pictures of my cat, because why not?
+            </p>
+          </div>
+
+          <ImageGrid imageArr={chesterImageGridData} />
+
+          <div className="content__container">
+            <h2 className="section-title">My side projects</h2>
+            <p className="caption">
+              I&apos;ve worked on a few projects over the past few months. Here
+              are some of my favorites.
+            </p>
+          </div>
           <Showcase
             sectionHeader="Projects"
             rightActionContainer={renderShowcaseButton()}

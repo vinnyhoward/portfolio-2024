@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import { HeroContainer } from "./Hero.styles";
 
 interface HeroProps {
@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({
     <HeroContainer>
       {logoUrl ? (
         <div className="logo__container">
-          <Image
+          <NextImage
             className="hero__logo"
             src={logoUrl}
             alt={title}
@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
         {imageUrl ? (
           <div className="image__container">
-            <Image
+            <NextImage
               className="hero__image"
               src={imageUrl}
               alt={title}

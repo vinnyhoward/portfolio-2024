@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
+import NextImage from "next/image";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
 import styled from "styled-components";
@@ -175,7 +175,7 @@ const Home: React.FC<Props> = () => {
       >
         <Layout>
           <div className="image__container">
-            <Image
+            <NextImage
               className="hero__image"
               src="/images/loot_chest_mock_shot_1.png"
               alt="Loot Chest"
@@ -201,7 +201,7 @@ const Home: React.FC<Props> = () => {
           </div>
 
           <div className="image__container">
-            <Image
+            <NextImage
               className="hero__image"
               src="/images/loot_home.png"
               alt="Loot Chest Home Page"

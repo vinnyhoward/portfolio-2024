@@ -1,4 +1,4 @@
-import Image from "next/image";
+import NextImage from "next/image";
 import Link from "next/link";
 import { v4 as uuidv4 } from "uuid";
 import { ShowcaseContainer } from "./Showcase.styles";
@@ -31,7 +31,7 @@ export const Showcase: React.FC<ShowcaseProps> = ({
           <div className="showcase__item">
             <div className="showcase__content">
               <div className="showcase-image__container">
-                <Image
+                <NextImage
                   className="showcase__image"
                   width={45}
                   height={45}
