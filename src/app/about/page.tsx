@@ -114,19 +114,19 @@ const Home: React.FC<Props> = () => {
   const fitnessImageGridData: ImageGridObj[] = [
     {
       id: uuidv4(),
-      url: "/images/spartan_1.jpg",
+      url: "/images/spartan1.jpg",
     },
     {
       id: uuidv4(),
-      url: "/images/spartan_2.jpg",
+      url: "/images/spartan2.jpg",
     },
     {
       id: uuidv4(),
-      url: "/images/spartan_3.jpg",
+      url: "/images/spartan3.jpg",
     },
     {
       id: uuidv4(),
-      url: "/images/spartan_4.jpg",
+      url: "/images/spartan4.jpg",
     },
     {
       id: uuidv4(),

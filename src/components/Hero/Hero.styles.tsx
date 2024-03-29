@@ -60,7 +60,7 @@ export const HeroContainer = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: 10px solid #f7f7f7;
+    border: 10px solid ${({ theme }) => theme.colors.color7};
     margin-left: 15px;
   }
 
@@ -79,7 +79,7 @@ export const HeroContainer = styled.div`
 
   .hero__logo {
     border-radius: 50%;
-    border: 10px solid #f7f7f7;
+    border: 10px solid ${({ theme }) => theme.colors.color7};
     margin-bottom: 15px;
   }
 `;
