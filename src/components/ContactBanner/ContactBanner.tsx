@@ -75,7 +75,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = () => {
     <ContactBannerContainer>
       <div className="contact__title">Let&apos;s work together</div>
       <div className="contact__caption">
-        Creating a website is a journey, and I&apos;m here to help you every
+        Creating a application is a journey, and I&apos;m here to help you every
         step of the way.
       </div>
       <div className="btn__container">

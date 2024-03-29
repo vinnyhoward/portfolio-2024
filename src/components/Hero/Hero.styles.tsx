@@ -14,10 +14,6 @@ export const HeroContainer = styled.div`
   position: relative;
   width: 100%;
 
-  /* @media ${({ theme }) => theme.mediaQueries.medium} {
-    justify-content: center;
-  } */
-
   .title {
     font-size: 3rem;
     font-family: ${({ theme }) => theme.fontFamily.outfit};

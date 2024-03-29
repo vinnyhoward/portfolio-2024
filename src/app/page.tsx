@@ -23,13 +23,7 @@ import { COMPANIES } from "@/constants/companies";
 import { ROUTES } from "@/constants/routes";
 
 const Main = styled.main`
-  background-color: ${({ theme }) => theme.colors.color2};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
   padding: 6rem;
-  width: 100%;
 
   @media ${({ theme }) => theme.mediaQueries.medium} {
     padding: 4.7rem 0.4rem;
@@ -120,14 +114,14 @@ export default function Home() {
   const heroProps = {
     title: "I'm Vince Howard 👋",
     caption:
-      "I am a software engineer with a passion for building products that make a difference.",
+      "I am a full-stack developer with a passion for building products that make a difference.",
     imageUrl: "/images/temp_profile.png",
     extraNode: renderButtons(),
   };
   return (
     <Main ref={el}>
       <MainBody
-        sectionHeader="Software Engineer"
+        sectionHeader="Full-Stack Developer"
         rightActionContainer={<Notification message="Available for work" />}
         heroContainer={<Hero {...heroProps} />}
       >

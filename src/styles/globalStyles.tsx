@@ -114,4 +114,60 @@ export const GlobalStyles = createGlobalStyle`
     margin-inline-start: 0px;
     margin-inline-end: 0px;
   }
+
+
+:root {
+  --d1: 320.54deg;
+  --d2: 58.72deg;
+  --d3: 121.28deg;
+  --d4: 180deg;
+  --d5: 52.23deg;
+  --d6: 121.28deg;
+  --d7: 50% 72.12% at 50% 50%;
+  --d8: 72.37%;
+  --p1: 0%;
+  --p2: 100%;
+  --p3: .5%;
+  --blend-one: screen, color-dodge, color-burn, screen, overlay, difference, color-dodge;
+  --blend-two: screen, color-dodge, color-burn, screen, overlay, difference;
+  --no-blend: inherit;
+
+  --c1: #A7DAC2;
+  --c2: #2149F1;
+  --c3: #E4A25B;
+  --c4: #285B3B;
+  --c5: #D57D72;
+  --c6: #486765;
+  --c7: #568C57;
+  --c8: #414FB4;
+  --c9: #7B0275;
+  --c10: #D957A4;
+  --c11: #3E7DD8;
+  --c12: #DE4E11;
+  --c13: #D8596E;
+  --c14: #A1540B;
+  --c15: #690FDA;
+  --c16: #4C9749;
+  --c17: #1E322A;
+  --c18: #95B23B;
+  --c19: #1C4337;
+  --c20: #A00064;
+}
+
+body {
+  background:
+  linear-gradient(var(--d1), var(--c1) var(--p1), var(--c11) var(--d8)),
+    linear-gradient(var(--d2), var(--c2) var(--p1), var(--c12) var(--p2)),
+    linear-gradient(var(--d3), var(--c3) var(--p1), var(--c13) var(--p2)),
+    linear-gradient(var(--d3), var(--c4) var(--p1), var(--c14) var(--p2)),
+    linear-gradient(var(--d4),var(--c5) var(--p1), var(--c15) var(--p3),var(--c17) var(--p2)),
+    linear-gradient(var(--d5), var(--c6) var(--p1), var(--c16) var(--p2)),
+    linear-gradient(var(--d6), var(--c7) var(--p1), var(--c10) var(--p2)),
+    radial-gradient(var(--d7), var(--c8) var(--p1), var(--c9) var(--p2));
+  background-blend-mode: var(--blend-two);
+  height:100vh;
+  width:100%;
+  backdrop-filter: none;
+  background-attachment: fixed;
+}
 `;
