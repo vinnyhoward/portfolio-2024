@@ -45,6 +45,7 @@ const Main = styled.div`
     border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
     width: 100%;
     margin: 0px 0px 15px 0px;
+    object-fit: cover;
   }
 
   .image__container {
