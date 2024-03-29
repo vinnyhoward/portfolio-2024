@@ -23,7 +23,7 @@ export const lightTheme = {
   name: "light",
   borderRadius: {
     borderRadius1: "6px",
-    borderRadius2: "12px",
+    borderRadius2: "18px",
   },
   colors: {
     color1: "#ffffff",
@@ -83,7 +83,7 @@ export const darkTheme = {
   name: "dark",
   borderRadius: {
     borderRadius1: "6px",
-    borderRadius2: "12px",
+    borderRadius2: "18px",
   },
   colors: {
     color1: "#212121",

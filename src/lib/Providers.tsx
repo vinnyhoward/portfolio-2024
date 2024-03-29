@@ -2,8 +2,11 @@
 
 import styled from "styled-components";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { DragAndDropContext } from "@/contexts/DragAndDropContext";
 import StyledComponentsRegistry from "./registry";
 import { GlobalStyles } from "@/styles/globalStyles";
+import { useDroppable } from "@dnd-kit/core";
+// import { ChatBotIcon } from "@/components/ChatBot/ChatBotIcon";
 
 const ParentLayout = styled.div`
   background-color: ${({ theme }) => theme.colors.color2};
@@ -11,14 +14,23 @@ const ParentLayout = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 `;
 
 const Providers = (props: React.PropsWithChildren) => {
+  const { isOver, setNodeRef } = useDroppable({
+    id: "droppable",
+  });
   return (
     <StyledComponentsRegistry>
       <GlobalStyles />
       <ThemeProvider>
-        <ParentLayout>{props.children}</ParentLayout>
+        <DragAndDropContext>
+          <ParentLayout ref={setNodeRef}>
+            {/* <ChatBotIcon /> */}
+            {props.children}
+          </ParentLayout>
+        </DragAndDropContext>
       </ThemeProvider>
     </StyledComponentsRegistry>
   );

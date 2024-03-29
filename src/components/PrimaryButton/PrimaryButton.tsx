@@ -7,7 +7,7 @@ interface ButtonStyleProps {
 }
 
 const Button = styled.button<ButtonStyleProps>`
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
   background-color: ${({ theme }) => theme.colors.color3};
   color: ${({ theme }) => theme.fontColor.fontColor2};
   height: 40px;

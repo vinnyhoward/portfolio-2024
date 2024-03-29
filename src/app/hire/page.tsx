@@ -52,7 +52,7 @@ const HireContainer = styled.div`
     background-color: ${({ theme }) => theme.colors.color7};
     font-size: ${({ theme }) => theme.fontSize.md};
     color: ${({ theme }) => theme.fontColor.fontColor1};
-    border-radius: 5px;
+    border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
     height: 50px;
     padding: 1rem;
     margin-top: 0.5rem;
@@ -82,7 +82,7 @@ const HireContainer = styled.div`
   }
 
   button {
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};;
   background-color: ${({ theme }) => theme.colors.color3};
   color: ${({ theme }) => theme.fontColor.fontColor2};
   height: 40px;
