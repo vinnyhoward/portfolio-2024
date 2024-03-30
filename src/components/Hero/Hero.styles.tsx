@@ -24,6 +24,7 @@ export const HeroContainer = styled.div`
 
     @media ${({ theme }) => theme.mediaQueries.medium} {
       margin-top: 20px;
+      text-align: center;
     }
   }
 
