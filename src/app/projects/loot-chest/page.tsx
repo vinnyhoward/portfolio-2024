@@ -97,7 +97,9 @@ const Home: React.FC<Props> = () => {
           <PrimaryButton
             buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
             buttonText="Website"
-            onClick={() => window.open("https://lootchest.lol/", "_blank")}
+            onClick={() =>
+              window.open("https://main--lootchest.netlify.app/", "_blank")
+            }
           />
         </div>
         <div className="btn">

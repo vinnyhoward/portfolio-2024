@@ -6,7 +6,7 @@ import { DragAndDropContext } from "@/contexts/DragAndDropContext";
 import StyledComponentsRegistry from "./registry";
 import { GlobalStyles } from "@/styles/globalStyles";
 import { useDroppable } from "@dnd-kit/core";
-import { ChatBotIcon } from "@/components/ChatBot/ChatBotIcon";
+// import { ChatBotIcon } from "@/components/ChatBot/ChatBotIcon";
 
 const ParentLayout = styled.div`
   background-color: ${({ theme }) => theme.colors.color2};
@@ -30,7 +30,7 @@ const Providers = (props: React.PropsWithChildren) => {
       <GlobalStyles />
       <ThemeProvider>
         <DragAndDropContext>
-          <ChatBotIcon />
+          {/* <ChatBotIcon /> */}
           <ParentLayout style={style} ref={setNodeRef}>
             {props.children}
           </ParentLayout>

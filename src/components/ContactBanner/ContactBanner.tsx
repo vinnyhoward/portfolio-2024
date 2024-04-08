@@ -1,9 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
 import { StarIcon, CopyIcon } from "@/components/Icons";
+import { ROUTES } from "@/constants/routes";
 
 const ContactBannerContainer = styled.div`
   display: flex;
@@ -48,6 +50,7 @@ interface ContactBannerProps {}
 export const ContactBanner: React.FC<ContactBannerProps> = () => {
   const [isCopied, setIsCopied] = useState(false);
   const { theme } = useTheme();
+  const router = useRouter();
 
   const isLightTheme = theme.name === "light";
   const primaryIconColor = isLightTheme
@@ -83,7 +86,7 @@ export const ContactBanner: React.FC<ContactBannerProps> = () => {
           <PrimaryButton
             buttonIcon={<StarIcon fill={primaryIconColor} />}
             buttonText="Hire Me!"
-            onClick={() => console.log("clicked")}
+            onClick={() => router.push(ROUTES.HIRE, { scroll: false })}
           />
         </div>
         <div className="btn">
