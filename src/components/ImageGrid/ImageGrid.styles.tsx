@@ -17,7 +17,7 @@ export const ImageGridContainer = styled.div`
 `;
 
 export const ImageSmall = styled(NextImage)`
-  border-radius: ${({ theme }) => theme.borderRadius.borderRadius2};
+  border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
   width: 75px;
   height: 75px;
   object-fit: cover;

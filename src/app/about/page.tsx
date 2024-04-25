@@ -179,8 +179,8 @@ const Home: React.FC<Props> = () => {
               src="/images/about_profile.jpg"
               alt="it me"
               priority
-              width={650}
-              height={650}
+              width={350}
+              height={500}
             />
           </div>
 
