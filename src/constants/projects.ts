@@ -14,7 +14,7 @@ export interface Project {
 export const PROJECTS: Project[] = [
   {
     title: "BMO Wallet",
-    techStack: "React Native, Expo, Ethers",
+    techStack: "React Native, Expo, Ethers, Solana/Web3",
     projectLogo: "/images/bmo_logo.png",
     route: ROUTES.BMO_WALLET,
   },

@@ -118,12 +118,37 @@ const Home: React.FC<Props> = () => {
   const renderCaption = (): JSX.Element => {
     return (
       <>
-        A multi-chain cryptocurrency wallet application using React Native,
-        designed to support both Ethereum and Solana blockchains. The wallet
-        enables users to securely create new wallets and restore existing ones
-        using mnemonic phrases. It features a user-friendly interface for
-        managing cryptocurrency balances, executing transactions, and viewing
-        transaction histories.
+        A multi-chain cryptocurrency wallet application using{" "}
+        <a
+          className="link"
+          href="https://reactnative.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          React Native
+        </a>
+        , designed to support both{" "}
+        <a
+          className="link"
+          href="https://ethereum.org/en/assets/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ethereum
+        </a>{" "}
+        and{" "}
+        <a
+          className="link"
+          href="https://solana.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Solana
+        </a>{" "}
+        blockchains. The wallet enables users to securely create new wallets and
+        restore existing ones using mnemonic phrases. It features a
+        user-friendly interface for managing cryptocurrency balances, executing
+        transactions, and viewing transaction histories.
       </>
     );
   };
@@ -173,7 +198,15 @@ const Home: React.FC<Props> = () => {
               to handle assets across Ethereum and Solana with ease. One of its
               standout features is the ability to provide real-time updates on
               transaction costs, which helps users optimize transaction timing
-              and expenses effectively. The application leverages Redux Toolkit
+              and expenses effectively. The application leverages{" "}
+              <a
+                className="link"
+                href="https://redux-toolkit.js.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Redux Toolkit
+              </a>{" "}
               for state management, ensuring a robust and scalable architecture,
               while blockchain interactions are handled through the{" "}
               <a
@@ -201,31 +234,76 @@ const Home: React.FC<Props> = () => {
               approach minimizes network requests and helps avoid rate limits,
               thereby enhancing the overall efficiency and performance of the
               application. Built with a focus on user-centric design and
-              technical precision, the project not only highlights my skills in
-              React Native and JavaScript but also demonstrates a deep
-              understanding of blockchain technology fundamentals.
+              technical precision, the project not only highlights my skills in{" "}
+              <a
+                className="link"
+                href="https://reactnative.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                React Native
+              </a>{" "}
+              and{" "}
+              <a
+                className="link"
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Typescript
+              </a>{" "}
+              but also demonstrates a deep understanding of blockchain
+              technology fundamentals.
             </p>
           </div>
 
-          {/* <div className="image__container">
+          <div className="image__container">
             <NextImage
               className="hero__image"
-              src="/images/clone_home.png"
-              alt="CloneX Subgraph"
+              src="/images/bmo_device_mock.png"
+              alt="Crypto Wallet"
               layout="responsive"
               width={650}
               height={650}
             />
-          </div> */}
+          </div>
           <br />
           <div className="content__container">
             <h2 className="section-title">Development Tools</h2>
             <p className="caption">
-              The project utilizes React Native for cross-platform mobile app
-              development, allowing for a unified user experience across
-              different devices. Redux Toolkit is employed for managing
-              application state, and Metro Bundler is used for effective
-              packaging and deployment. The use of{" "}
+              The project utilizes{" "}
+              <a
+                className="link"
+                href="https://reactnative.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                React Native
+              </a>{" "}
+              for cross-platform mobile app development, allowing for a unified
+              user experience across different devices.{" "}
+              <a
+                className="link"
+                href="https://redux-toolkit.js.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Redux Toolkit
+              </a>{" "}
+              is employed for managing application state, and{" "}
+              <a
+                className="link"
+                href="https://expo.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Expo
+              </a>{" "}
+              is used to help streamline the development process by enabling
+              rapid prototyping and providing direct access to native APIs. This
+              setup has significantly reduced development time and simplified
+              the deployment process across iOS and Android platforms. The use
+              of{" "}
               <a
                 className="link"
                 href="https://docs.ethers.org/v6/"
@@ -253,8 +331,7 @@ const Home: React.FC<Props> = () => {
             rightActionContainer={renderShowcaseButton()}
             dataList={PROJECTS.filter(
               (project) =>
-                project.title !== "CloneX Subgraph" &&
-                project.title !== "CloneX Subgraph"
+                project.title !== "BMO Wallet" && project.title !== "BMO Wallet"
             )}
           />
         </Layout>
