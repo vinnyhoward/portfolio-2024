@@ -13,16 +13,22 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    title: "BMO Wallet",
+    techStack: "React Native, Expo, Ethers",
+    projectLogo: "/images/bmo_logo.png",
+    route: ROUTES.BMO_WALLET,
+  },
+  {
+    title: "Loot Chest",
+    techStack: "Three.js, Web Components, Sanity",
+    projectLogo: "/images/loot_chest_logo.png",
+    route: ROUTES.LOOT_CHEST,
+  },
+  {
     title: "CloneX Subgraph",
     techStack: "Next.js, The Graph, Prisma",
     projectLogo: "/images/rtfkt_logo.png",
     route: ROUTES.CLONEX_SUBGRAPH,
-  },
-  {
-    title: "Loot Chest",
-    techStack: "Three.js, Sanity, Web Components",
-    projectLogo: "/images/loot_chest_logo.png",
-    route: ROUTES.LOOT_CHEST,
   },
   {
     title: "Reko",

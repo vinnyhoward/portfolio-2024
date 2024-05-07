@@ -12,13 +12,7 @@ import { Showcase } from "@/components/Showcase/Showcase";
 import { Layout } from "@/components/Layout/Layout";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
-import {
-  GithubIcon,
-  GooglePlayIcon,
-  AppleIcon,
-  WebsiteIcon,
-  ArrowIcon,
-} from "@/components/Icons";
+import { GithubIcon, ArrowIcon } from "@/components/Icons";
 import { ROUTES } from "@/constants/routes";
 import { PROJECTS } from "@/constants/projects";
 
@@ -76,12 +70,6 @@ const ButtonContainer = styled.div`
   .btn {
     margin-right: 15px;
   }
-
-  @media ${({ theme }) => theme.mediaQueries.small} {
-    .github {
-      display: none;
-    }
-  }
 `;
 
 interface Props {}
@@ -102,40 +90,14 @@ const Home: React.FC<Props> = () => {
       <ButtonContainer>
         <div className="btn">
           <PrimaryButton
-            buttonIcon={<AppleIcon fill={primaryIconColor} />}
-            buttonText="App Store"
+            buttonIcon={<GithubIcon fill={primaryIconColor} />}
+            buttonText="Github"
             onClick={() =>
               window.open(
-                "https://apps.apple.com/us/app/reko-locally-produced-food/id1511967191",
+                "https://github.com/vinnyhoward/rn-crypto-wallet",
                 "_blank"
               )
             }
-          />
-        </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<GooglePlayIcon fill={primaryIconColor} />}
-            buttonText="Play Store"
-            onClick={() =>
-              window.open(
-                "https://play.google.com/store/apps/details?id=com.rumbly&hl=en_US&gl=US",
-                "_blank"
-              )
-            }
-          />
-        </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
-            buttonText="Website"
-            onClick={() => window.open("https://rekohub.com/", "_blank")}
-          />
-        </div>
-        <div className="btn github">
-          <SecondaryButton
-            buttonIcon={<GithubIcon fill={secondaryIconColor} />}
-            buttonText="Private"
-            onClick={() => null}
           />
         </div>
       </ButtonContainer>
@@ -156,14 +118,12 @@ const Home: React.FC<Props> = () => {
   const renderCaption = (): JSX.Element => {
     return (
       <>
-        Reko is an innovative platform championing the local food movement,
-        designed to connect users with the best locally produced foods - from
-        artisan bread and grass-fed beef to garden-fresh produce. It offers a
-        seamless marketplace for consumers to discover and purchase local
-        delicacies, and for producers to manage sales, inventory, and payments
-        efficiently. Reko embodies the essence of local living, promoting
-        healthier lifestyles, stronger economies, and environmental
-        sustainability.
+        A multi-chain cryptocurrency wallet application using React Native,
+        designed to support both Ethereum and Solana blockchains. The wallet
+        enables users to securely create new wallets and restore existing ones
+        using mnemonic phrases. It features a user-friendly interface for
+        managing cryptocurrency balances, executing transactions, and viewing
+        transaction histories.
       </>
     );
   };
@@ -179,9 +139,9 @@ const Home: React.FC<Props> = () => {
   }, []);
 
   const heroProps = {
-    title: "Reko",
+    title: "BMO Wallet",
     caption: renderCaption(),
-    logoUrl: PROJECTS[3].projectLogo,
+    logoUrl: PROJECTS[0].projectLogo,
     imageUrl: null,
     extraNode: renderButtons(),
   };
@@ -196,8 +156,8 @@ const Home: React.FC<Props> = () => {
           <div className="image__container">
             <NextImage
               className="hero__image"
-              src="/images/reko_mock_shot_1.png"
-              alt="Reko"
+              src="/images/bmo_banner.png"
+              alt="CloneX Subgraph"
               layout="responsive"
               width={650}
               height={650}
@@ -205,67 +165,86 @@ const Home: React.FC<Props> = () => {
           </div>
 
           <div className="content__container">
-            <h2 className="section-title">Purpose</h2>
+            <h2 className="section-title">
+              Key Features and Technical Highlights
+            </h2>
             <p className="caption">
-              Joining Reko as a contributing contractor, my goal was to immerse
-              myself in a project that stands at the forefront of innovation.
-              Reko&apos;s commitment to localizing food production resonated
-              with my desire to work on initiatives that not only embrace new
-              ideas but also have a meaningful impact on health, economy, and
-              environment.
-            </p>
-          </div>
-
-          <div className="image__container">
-            <NextImage
-              className="hero__image"
-              src="/images/reko_home.png"
-              alt="Reko Home Page"
-              layout="responsive"
-              width={650}
-              height={650}
-            />
-          </div>
-
-          <div className="content__container">
-            <h2 className="section-title">Tech Stack</h2>
-            <p className="caption">
-              The Reko project leverages modern development frameworks and
-              services for both its seamless cross-platform functionality. The
-              tech stack includes:
-            </p>
-            <p className="caption">
-              <strong>Frontend and Cross-Platform:</strong> Engineered to
-              provide a unified experience across web and mobile, the
-              application is built using{" "}
+              The wallet supports multiple blockchain networks, enabling users
+              to handle assets across Ethereum and Solana with ease. One of its
+              standout features is the ability to provide real-time updates on
+              transaction costs, which helps users optimize transaction timing
+              and expenses effectively. The application leverages Redux Toolkit
+              for state management, ensuring a robust and scalable architecture,
+              while blockchain interactions are handled through the{" "}
               <a
                 className="link"
-                href="https://reactnative.dev/"
+                href="https://www.npmjs.com/package/@solana/web3.js"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                React Native
+                @solana/web3.js
               </a>{" "}
               and{" "}
               <a
                 className="link"
-                href="https://necolas.github.io/react-native-web/"
+                href="https://docs.ethers.org/v6/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                React Native Web
-              </a>
-              , with{" "}
+                Ether.js
+              </a>{" "}
+              and libraries, ensuring secure and reliable transactions.
+              <br />
+              <br />
+              Additionally, the app incorporates efficient data management
+              strategies such as periodic data fetching and local caching. This
+              approach minimizes network requests and helps avoid rate limits,
+              thereby enhancing the overall efficiency and performance of the
+              application. Built with a focus on user-centric design and
+              technical precision, the project not only highlights my skills in
+              React Native and JavaScript but also demonstrates a deep
+              understanding of blockchain technology fundamentals.
+            </p>
+          </div>
+
+          {/* <div className="image__container">
+            <NextImage
+              className="hero__image"
+              src="/images/clone_home.png"
+              alt="CloneX Subgraph"
+              layout="responsive"
+              width={650}
+              height={650}
+            />
+          </div> */}
+          <br />
+          <div className="content__container">
+            <h2 className="section-title">Development Tools</h2>
+            <p className="caption">
+              The project utilizes React Native for cross-platform mobile app
+              development, allowing for a unified user experience across
+              different devices. Redux Toolkit is employed for managing
+              application state, and Metro Bundler is used for effective
+              packaging and deployment. The use of{" "}
               <a
                 className="link"
-                href="https://expo.dev/"
+                href="https://docs.ethers.org/v6/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Expo
+                Ether.js
               </a>{" "}
-              for an accelerated development cycle and streamlined deployment
-              process.
+              and{" "}
+              <a
+                className="link"
+                href="https://www.npmjs.com/package/@solana/web3.js"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @solana/web3.js
+              </a>{" "}
+              ensures that all blockchain operations are executed flawlessly,
+              making the wallet both functional and secure.
             </p>
           </div>
 
@@ -273,7 +252,9 @@ const Home: React.FC<Props> = () => {
             sectionHeader="Other Projects"
             rightActionContainer={renderShowcaseButton()}
             dataList={PROJECTS.filter(
-              (project) => project.title !== "Reko" && project.title !== "Reko"
+              (project) =>
+                project.title !== "CloneX Subgraph" &&
+                project.title !== "CloneX Subgraph"
             )}
           />
         </Layout>
