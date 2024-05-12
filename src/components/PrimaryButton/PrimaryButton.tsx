@@ -20,12 +20,9 @@ const Button = styled.button<ButtonStyleProps>`
   display: flex;
   flex-direction: ${({ reverse }) =>
     Boolean(reverse) ? "row-reverse" : "row"};
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-
-  &:hover {
-    /* border 1px solid ${({ theme }) => theme.colors.color3}; */
-  }
+  width: 100%;
 
   .icon__container {
     width: 25px;
@@ -33,7 +30,7 @@ const Button = styled.button<ButtonStyleProps>`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: ${({ reverse }) => (Boolean(reverse) ? "0 0 0 8px" : "0 8px 0 0")};
+    margin-right: 8px;
   }
 
   .btn__text {
@@ -69,8 +66,8 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
 }) => {
   return (
     <Button reverse={reverse.toString()} onClick={onClick}>
-      {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
       <div className="btn__text">{buttonText}</div>
+      {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
     </Button>
   );
 };

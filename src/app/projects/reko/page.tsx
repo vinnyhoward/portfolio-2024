@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import NextImage from "next/image";
 import { useRouter } from "next/navigation";
 import gsap from "gsap";
@@ -77,9 +77,22 @@ const ButtonContainer = styled.div`
     margin-right: 15px;
   }
 
+  .btn-sub-container {
+    display: flex;
+    flex-direction: row;
+  }
+
   @media ${({ theme }) => theme.mediaQueries.small} {
-    .github {
-      display: none;
+    .btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .btn-sub-container {
+      width: 100%;
+      margin-left: 7.5px;
+      display: flex;
+      flex-direction: column;
     }
   }
 `;
@@ -100,43 +113,47 @@ const Home: React.FC<Props> = () => {
   const renderButtons = () => {
     return (
       <ButtonContainer>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<AppleIcon fill={primaryIconColor} />}
-            buttonText="App Store"
-            onClick={() =>
-              window.open(
-                "https://apps.apple.com/us/app/reko-locally-produced-food/id1511967191",
-                "_blank"
-              )
-            }
-          />
+        <div className="btn-sub-container">
+          <div className="btn">
+            <PrimaryButton
+              buttonIcon={<AppleIcon fill={primaryIconColor} />}
+              buttonText="App Store"
+              onClick={() =>
+                window.open(
+                  "https://apps.apple.com/us/app/reko-locally-produced-food/id1511967191",
+                  "_blank"
+                )
+              }
+            />
+          </div>
+          <div className="btn">
+            <PrimaryButton
+              buttonIcon={<GooglePlayIcon fill={primaryIconColor} />}
+              buttonText="Play Store"
+              onClick={() =>
+                window.open(
+                  "https://play.google.com/store/apps/details?id=com.rumbly&hl=en_US&gl=US",
+                  "_blank"
+                )
+              }
+            />
+          </div>
         </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<GooglePlayIcon fill={primaryIconColor} />}
-            buttonText="Play Store"
-            onClick={() =>
-              window.open(
-                "https://play.google.com/store/apps/details?id=com.rumbly&hl=en_US&gl=US",
-                "_blank"
-              )
-            }
-          />
-        </div>
-        <div className="btn">
-          <PrimaryButton
-            buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
-            buttonText="Website"
-            onClick={() => window.open("https://rekohub.com/", "_blank")}
-          />
-        </div>
-        <div className="btn github">
-          <SecondaryButton
-            buttonIcon={<GithubIcon fill={secondaryIconColor} />}
-            buttonText="Private"
-            onClick={() => null}
-          />
+        <div className="btn-sub-container">
+          <div className="btn">
+            <PrimaryButton
+              buttonIcon={<WebsiteIcon fill={primaryIconColor} />}
+              buttonText="Website"
+              onClick={() => window.open("https://rekohub.com/", "_blank")}
+            />
+          </div>
+          <div className="btn github">
+            <SecondaryButton
+              buttonIcon={<GithubIcon fill={secondaryIconColor} />}
+              buttonText="Private"
+              onClick={() => null}
+            />
+          </div>
         </div>
       </ButtonContainer>
     );
@@ -168,7 +185,7 @@ const Home: React.FC<Props> = () => {
     );
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (el.current) {
       gsap.fromTo(
         el.current.children,

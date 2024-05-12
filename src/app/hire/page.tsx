@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import styled from "styled-components";
 import { MainBody } from "@/components/MainBody/MainBody";
@@ -153,7 +153,7 @@ const Home: React.FC<Props> = () => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (el.current) {
       gsap.fromTo(
         el.current.children,

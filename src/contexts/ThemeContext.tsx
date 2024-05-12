@@ -5,7 +5,7 @@ import React, {
   useContext,
   ReactNode,
   useState,
-  useEffect,
+  useLayoutEffect,
 } from "react";
 import {
   DefaultTheme,
@@ -31,7 +31,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<DefaultTheme>(lightTheme);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
       setTheme(JSON.parse(localTheme));

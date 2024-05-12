@@ -90,6 +90,11 @@ export const HeroContainer = styled.div`
       padding: 0 10px;
       justify-content: center;
     }
+
+    @media ${({ theme }) => theme.mediaQueries.small} {
+      width: 80%;
+      display: block;
+    }
   }
 
   .hero__logo {

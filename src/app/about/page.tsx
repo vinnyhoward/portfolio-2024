@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import NextImage from "next/image";
 import { v4 as uuidv4 } from "uuid";
 import { useRouter } from "next/navigation";
@@ -92,7 +92,7 @@ const Home: React.FC<Props> = () => {
     );
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (el.current) {
       gsap.fromTo(
         el.current.children,

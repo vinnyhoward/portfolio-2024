@@ -18,17 +18,17 @@ const Button = styled.button<ButtonStyleProps>`
   display: flex;
   flex-direction: ${({ reverse }) =>
     Boolean(reverse) ? "row-reverse" : "row"};
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 
   .icon__container {
-    cursor: pointer;
     width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: ${({ reverse }) => (Boolean(reverse) ? "0 0 0 8px" : "0 8px 0 0")};
+    margin-right: 8px;
   }
 
   .btn__text {
@@ -65,8 +65,8 @@ export const SecondaryButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <Button reverse={reverse.toString()} onClick={onClick}>
-      {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
       <div className="btn__text">{buttonText}</div>
+      {buttonIcon ? <div className="icon__container">{buttonIcon}</div> : null}
     </Button>
   );
 };
