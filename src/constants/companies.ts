@@ -21,7 +21,7 @@ export const COMPANIES: Company[] = [
   {
     title: "Evernym",
     projectLogo: "/images/evernym_logo.png",
-    route: "https://www.evernym.com/blog/",
+    route: "https://www.gitlab.com/evernym",
   },
   {
     title: "Medici Ventures",
