@@ -167,7 +167,7 @@ const Home: React.FC<Props> = () => {
     <HireContainer ref={el}>
       <MainBody
         sectionHeader="Hire Me"
-        rightActionContainer={<Notification message="Available for work" />}
+        rightActionContainer={<Notification message="Unavailable for work" />}
         heroContainer={<Hero {...heroProps} />}
       >
         <Layout hideContactBanner>

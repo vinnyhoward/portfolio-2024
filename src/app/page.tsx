@@ -122,7 +122,7 @@ export default function Home() {
     <Main ref={el}>
       <MainBody
         sectionHeader="Full-Stack Developer"
-        rightActionContainer={<Notification message="Available for work" />}
+        rightActionContainer={<Notification message="Unavailable for work" />}
         heroContainer={<Hero {...heroProps} />}
       >
         <Layout>
