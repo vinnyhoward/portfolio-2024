@@ -58,6 +58,15 @@ const Main = styled.div`
     line-height: 1.5;
     margin: 10px 0;
   }
+
+  ul {
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -118,7 +127,7 @@ const Home: React.FC<Props> = () => {
   const renderCaption = (): JSX.Element => {
     return (
       <>
-        A multi-chain cryptocurrency wallet application using{" "}
+        BMO Wallet is a multi-chain cryptocurrency wallet application built with{" "}
         <a
           className="link"
           href="https://reactnative.dev/"
@@ -145,10 +154,9 @@ const Home: React.FC<Props> = () => {
         >
           Solana
         </a>{" "}
-        blockchains. The wallet enables users to securely create new wallets and
-        restore existing ones using mnemonic phrases. It features a
-        user-friendly interface for managing cryptocurrency balances, executing
-        transactions, and viewing transaction histories.
+        blockchains. This robust mobile application offers a comprehensive suite
+        of features for managing digital assets across multiple blockchains,
+        with a focus on user experience and security.
       </>
     );
   };
@@ -181,8 +189,8 @@ const Home: React.FC<Props> = () => {
           <div className="image__container">
             <NextImage
               className="hero__image"
-              src="/images/bmo_banner.png"
-              alt="CloneX Subgraph"
+              src="/images/readme_banner.png"
+              alt="BMO Wallet"
               layout="responsive"
               width={650}
               height={650}
@@ -190,70 +198,37 @@ const Home: React.FC<Props> = () => {
           </div>
 
           <div className="content__container">
-            <h2 className="section-title">
-              Key Features and Technical Highlights
-            </h2>
+            <h2 className="section-title">Key Features and Functionality</h2>
             <p className="caption">
-              The wallet supports multiple blockchain networks, enabling users
-              to handle assets across Ethereum and Solana with ease. One of its
-              standout features is the ability to provide real-time updates on
-              transaction costs, which helps users optimize transaction timing
-              and expenses effectively. The application leverages{" "}
-              <a
-                className="link"
-                href="https://redux-toolkit.js.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Redux Toolkit
-              </a>{" "}
-              for state management, ensuring a robust and scalable architecture,
-              while blockchain interactions are handled through the{" "}
-              <a
-                className="link"
-                href="https://www.npmjs.com/package/@solana/web3.js"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @solana/web3.js
-              </a>{" "}
-              and{" "}
-              <a
-                className="link"
-                href="https://docs.ethers.org/v6/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ether.js
-              </a>{" "}
-              and libraries, ensuring secure and reliable transactions.
-              <br />
-              <br />
-              Additionally, the app incorporates efficient data management
-              strategies such as periodic data fetching and local caching. This
-              approach minimizes network requests and helps avoid rate limits,
-              thereby enhancing the overall efficiency and performance of the
-              application. Built with a focus on user-centric design and
-              technical precision, the project not only highlights my skills in{" "}
-              <a
-                className="link"
-                href="https://reactnative.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                React Native
-              </a>{" "}
-              and{" "}
-              <a
-                className="link"
-                href="https://www.typescriptlang.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Typescript
-              </a>{" "}
-              but also demonstrates a deep understanding of blockchain
-              technology fundamentals.
+              BMO Wallet offers a unique blend of features designed for both
+              novice and experienced cryptocurrency users:
+              <div className="caption">
+                <div>
+                  <strong>Multi-Chain Support:</strong> Seamlessly manage
+                  Ethereum and Solana assets within a single interface.
+                </div>
+                <div>
+                  <strong>Comprehensive Wallet Management:</strong> Create new
+                  wallets, import existing ones, and manage multiple accounts
+                  with ease.
+                </div>
+                <div>
+                  <strong>Transaction Handling:</strong> Send, receive, and
+                  track transactions across supported blockchains.
+                </div>
+                <div>
+                  <strong>Real-time Balance and Portfolio Tracking:</strong>{" "}
+                  Monitor your crypto holdings with up-to-the-minute updates.
+                </div>
+                <div>
+                  <strong>QR Code Integration:</strong> Simplify address sharing
+                  and transaction processes.
+                </div>
+              </div>
+              These features come together to create a powerful tool that
+              simplifies the often complex world of cryptocurrency management,
+              providing users with a clear, comprehensive view of their digital
+              assets.
             </p>
           </div>
 
@@ -267,63 +242,75 @@ const Home: React.FC<Props> = () => {
               height={650}
             />
           </div>
-          <br />
+
           <div className="content__container">
-            <h2 className="section-title">Development Tools</h2>
-            <p className="caption">
-              The project utilizes{" "}
-              <a
-                className="link"
-                href="https://reactnative.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                React Native
-              </a>{" "}
-              for cross-platform mobile app development, allowing for a unified
-              user experience across different devices.{" "}
-              <a
-                className="link"
-                href="https://redux-toolkit.js.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Redux Toolkit
-              </a>{" "}
-              is employed for managing application state, and{" "}
-              <a
-                className="link"
-                href="https://expo.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Expo
-              </a>{" "}
-              is used to help streamline the development process by enabling
-              rapid prototyping and providing direct access to native APIs. This
-              setup has significantly reduced development time and simplified
-              the deployment process across iOS and Android platforms. The use
-              of{" "}
-              <a
-                className="link"
-                href="https://docs.ethers.org/v6/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ether.js
-              </a>{" "}
-              and{" "}
-              <a
-                className="link"
-                href="https://www.npmjs.com/package/@solana/web3.js"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @solana/web3.js
-              </a>{" "}
-              ensures that all blockchain operations are executed flawlessly,
-              making the wallet both functional and secure.
-            </p>
+            <h2 className="section-title">Technical Innovation and Security</h2>
+            <div className="caption">
+              BMO Wallet is built on a foundation of cutting-edge technologies,
+              ensuring performance, security, and scalability:
+              <div className="caption">
+                <div>
+                  <strong>React Native & Expo:</strong> For cross-platform
+                  mobile app development.
+                </div>
+                <div>
+                  <strong>TypeScript:</strong> Enhances code reliability and
+                  reduces runtime errors.
+                </div>
+                <div>
+                  <strong>Redux Toolkit:</strong> Ensures efficient state
+                  management across the application.
+                </div>
+                <div>
+                  <strong>Ethers.js & @solana/web3.js:</strong> Facilitate
+                  secure blockchain interactions.
+                </div>
+                <div>
+                  <strong>Alchemy SDK:</strong> Simplifies blockchain requests
+                  and improves network interaction reliability.
+                </div>
+              </div>
+              Security is paramount in BMO Wallet&apos;s design. The application
+              implements advanced encryption techniques, including AES
+              encryption for sensitive data and PBKDF2 for secure key
+              derivation. The wallet&apos;s non-custodial design ensures users
+              maintain full control of their private keys, while encrypted
+              storage of recovery phrases provides protection against
+              unauthorized access.
+            </div>
+          </div>
+
+          <div className="content__container">
+            <h2 className="section-title">Future Vision and Development</h2>
+            <div className="caption">
+              BMO Wallet is an evolving platform with a clear roadmap for future
+              enhancements:
+              <div className="caption">
+                <div>
+                  - Integration of biometric authentication for enhanced
+                  security.
+                </div>
+                <div>
+                  - Expansion to support additional blockchains, including
+                  Polygon and Bitcoin.
+                </div>
+                <div>
+                  - Implementation of NFT support for viewing and managing
+                  non-fungible tokens.
+                </div>
+                <div>
+                  - Development of real-time price alerts and customizable
+                  notifications.
+                </div>
+              </div>
+              <div className="caption">
+                These planned features reflect our commitment to creating a
+                comprehensive, user-friendly platform that adapts to the dynamic
+                landscape of blockchain technology. Through ongoing development
+                and community feedback, BMO Wallet aims to remain at the
+                forefront of mobile cryptocurrency management solutions.
+              </div>
+            </div>
           </div>
 
           <Showcase
