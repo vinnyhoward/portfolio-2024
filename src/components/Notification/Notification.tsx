@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { useTheme } from "../../contexts/ThemeContext";
 
 const NotificationContainer = styled.div`
-  /* background-color: rgba(40, 199, 128, 0.15); */
-  background-color: rgba(40, 40, 128, 0.15);
+  background-color: rgba(40, 199, 128, 0.15);
+  /* background-color: rgba(40, 40, 128, 0.15); */
   border-radius: ${({ theme }) => theme.borderRadius.borderRadius1};
   box-shadow: ${({ theme }) => theme.boxShadow.shadow1};
   width: 100%;
@@ -12,7 +12,7 @@ const NotificationContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
-  color: ${({ theme }) => theme.fontFamily.fontColor3};
+  color: ${({ theme }) => theme.fontFamily.fontColor1};
   font-size: ${({ theme }) => theme.fontSize.sm};
   font-family: ${({ theme }) => theme.fontFamily.robotoFlex};
   font-weight: 500;
@@ -20,20 +20,20 @@ const NotificationContainer = styled.div`
 
   p {
     margin: 0;
-    color: rgba(30, 30, 84, 1);
+    color: rgba(40, 199, 128, 1);
   }
 
   .dot {
     height: 7.5px;
     width: 7.5px;
-    background-color: rgba(30, 30, 84, 0.5);
+    background-color: rgba(40, 199, 128, 0.5);
     border-radius: 50%;
     margin-right: 8px;
   }
 
-  /* .dot {
+  .dot {
     animation: expandingDot 1s infinite;
-  } */
+  }
 
   @keyframes expandingDot {
     0% {
